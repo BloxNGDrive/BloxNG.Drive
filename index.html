@@ -7,6 +7,7 @@
     <title>BloxNG.Drive</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -15,484 +16,646 @@
         body {
             margin: 0;
             width: 100%;
-            min-height: 100%;
+            height: 100%;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
 
-            background: #00a2ff;
+            background:
+                linear-gradient(
+                    135deg,
+                    #2459a6 0%,
+                    #326bb9 50%,
+                    #3975c4 100%
+                );
 
             color: white;
+
+            overflow-x: hidden;
         }
 
-        /* =========================
-           TOP BAR
-        ========================= */
 
-        .topbar {
-            height: 64px;
+        /* =========================================
+           MAIN PAGE
+        ========================================= */
 
-            background: #eeeeee;
+        .page {
+            width: 100%;
+            min-height: 100vh;
 
             display: flex;
+            flex-direction: column;
+
             align-items: center;
-
-            padding: 0 35px;
-
-            box-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.2);
         }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
 
         .logo {
-            color: #333333;
+            margin-top: 25px;
 
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 42px;
 
-            letter-spacing: -1px;
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: white;
+
+            text-shadow:
+                2px 2px 0 #222,
+                -1px -1px 0 rgba(0,0,0,.2);
         }
 
-        .top-links {
-            margin-left: auto;
 
-            display: flex;
-            gap: 25px;
-        }
+        /* =========================================
+           HEADLINE
+        ========================================= */
 
-        .top-links a {
-            color: #555555;
-
-            text-decoration: none;
-
-            font-size: 14px;
-        }
-
-        .top-links a:hover {
-            color: #111111;
-        }
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        .main {
-            max-width: 1100px;
-
-            margin: 0 auto;
-
-            padding: 55px 30px 120px;
+        .headline {
+            margin-top: 20px;
 
             text-align: center;
         }
 
-        .headline {
-            font-size: 38px;
+        .headline h1 {
+            margin: 0;
 
-            font-weight: normal;
+            font-size: 39px;
 
-            margin: 0 0 10px;
+            line-height: 1.15;
+
+            font-weight: 700;
 
             text-shadow:
-                0 2px 2px rgba(0, 0, 0, 0.15);
+                0 2px 2px rgba(0,0,0,.15);
         }
 
-        .subtitle {
-            font-size: 18px;
+        .headline h2 {
+            margin: 12px 0 0;
 
-            margin-bottom: 45px;
+            font-size: 28px;
 
-            opacity: 0.95;
+            font-weight: 700;
+
+            text-shadow:
+                0 2px 2px rgba(0,0,0,.15);
         }
 
-        /* =========================
+
+        /* =========================================
            CONTENT
-        ========================= */
+        ========================================= */
 
         .content {
             display: flex;
 
-            justify-content: center;
+            gap: 70px;
 
-            align-items: stretch;
+            margin-top: 28px;
 
-            gap: 35px;
-
-            text-align: left;
+            align-items: flex-start;
         }
 
-        /* IMAGE PLACEHOLDER */
 
-        .image-area {
-            width: 570px;
+        /* =========================================
+           LEFT IMAGE
+        ========================================= */
 
-            min-height: 350px;
+        .left {
+            width: 365px;
 
-            background: #168bd0;
+            text-align: center;
+        }
 
-            border: 1px solid rgba(0, 0, 0, 0.15);
+        .image-placeholder {
+            width: 365px;
+            height: 198px;
+
+            background: #22a7e8;
 
             box-shadow:
-                0 3px 8px rgba(0, 0, 0, 0.2);
+                0 1px 3px rgba(0,0,0,.35);
 
             display: flex;
 
+            align-items: center;
             justify-content: center;
 
-            align-items: center;
+            color: rgba(255,255,255,.55);
 
-            color: rgba(255, 255, 255, 0.7);
-
-            font-size: 18px;
+            font-size: 14px;
         }
 
-        /* =========================
-           LOGIN BOX
-        ========================= */
+        .build-text {
+            margin-top: 15px;
 
-        .login {
-            width: 340px;
-
-            background: white;
-
-            padding: 28px;
-
-            border-radius: 3px;
-
-            box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.25);
-
-            color: #333333;
-        }
-
-        .login h2 {
-            margin: 0 0 20px;
-
-            text-align: center;
-
-            font-size: 25px;
-
-            font-weight: normal;
-        }
-
-        .login label {
-            display: block;
-
-            font-size: 13px;
+            font-size: 21px;
 
             font-weight: bold;
 
-            margin-bottom: 6px;
+            text-shadow:
+                0 2px 2px rgba(0,0,0,.15);
         }
 
-        .login input {
+
+        /* =========================================
+           SIGNUP PANEL
+        ========================================= */
+
+        .signup {
+            width: 245px;
+
+            min-height: 350px;
+
+            padding: 20px 23px;
+
+            background:
+                rgba(18, 73, 137, .62);
+
+            box-shadow:
+                inset 0 0 20px rgba(0,0,0,.08);
+        }
+
+
+        /* =========================================
+           SIGNUP / LOGIN
+        ========================================= */
+
+        .tabs {
+            font-size: 15px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .tabs .active {
+            color: white;
+        }
+
+        .tabs .login-link {
+            color: #8fc2ed;
+
+            text-decoration: none;
+
+            margin-left: 5px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .field {
+            margin-top: 9px;
+        }
+
+        .field label {
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 3px;
+        }
+
+        .field input {
             width: 100%;
 
-            height: 42px;
+            height: 23px;
 
-            border: 1px solid #cccccc;
+            border: 1px solid #aaa;
 
-            border-radius: 3px;
+            border-radius: 0;
 
-            padding: 8px 10px;
+            padding: 2px 5px;
 
-            margin-bottom: 15px;
+            font-size: 12px;
 
-            font-size: 15px;
+            background: white;
 
             outline: none;
         }
 
-        .login input:focus {
-            border-color: #00a2ff;
+        .field input:focus {
+            border-color: #6da9dc;
         }
 
-        /* =========================
-           GREEN BUTTON
-        ========================= */
+
+        /* =========================================
+           SMALL HELP TEXT
+        ========================================= */
+
+        .help {
+            font-size: 9px;
+
+            line-height: 11px;
+
+            margin-top: 3px;
+
+            color: #e0ecf8;
+        }
+
+
+        /* =========================================
+           BIRTHDAY
+        ========================================= */
+
+        .birthday {
+            display: flex;
+
+            gap: 4px;
+
+            margin-top: 4px;
+        }
+
+        .birthday select {
+            height: 22px;
+
+            border: 1px solid #aaa;
+
+            font-size: 11px;
+
+            background: white;
+        }
+
+
+        /* =========================================
+           GENDER
+        ========================================= */
+
+        .gender {
+            font-size: 11px;
+
+            margin-top: 10px;
+        }
+
+        .gender label {
+            display: inline;
+
+            margin-right: 12px;
+        }
+
+
+        /* =========================================
+           SIGN UP BUTTON
+        ========================================= */
 
         .signup-button {
             width: 100%;
 
-            height: 45px;
+            height: 40px;
 
-            border: 0;
+            margin-top: 8px;
 
-            border-radius: 3px;
+            border: none;
 
-            background: #00b83f;
+            background:
+                linear-gradient(
+                    to bottom,
+                    #20c900,
+                    #00a800
+                );
 
             color: white;
 
-            font-size: 17px;
+            font-size: 18px;
 
             font-weight: bold;
 
             cursor: pointer;
+
+            text-shadow:
+                0 1px 1px rgba(0,0,0,.25);
         }
 
         .signup-button:hover {
-            background: #00a939;
+            background:
+                linear-gradient(
+                    to bottom,
+                    #28dc00,
+                    #00b500
+                );
         }
 
-        .login-link {
-            text-align: center;
 
-            margin-top: 18px;
+        /* =========================================
+           FOOTER
+        ========================================= */
 
-            font-size: 13px;
+        .footer {
+            margin-top: auto;
 
-            color: #777777;
+            width: 100%;
+
+            min-height: 58px;
+
+            border-top: 1px solid rgba(255,255,255,.12);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            font-size: 9px;
+
+            color: #d6e6f7;
         }
 
-        .login-link a {
-            color: #008bd1;
+        .footer a {
+            color: #d6e6f7;
 
             text-decoration: none;
-
-            font-weight: bold;
         }
 
-        .login-link a:hover {
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        /* =========================
-           BOTTOM CITY PLACEHOLDER
-        ========================= */
 
-        .city {
-            position: fixed;
-
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            height: 85px;
-
-            background: #0088d4;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: center;
-
-            overflow: hidden;
-        }
-
-        .buildings {
-            width: 100%;
-
-            height: 100%;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: center;
-
-            gap: 5px;
-        }
-
-        .building {
-            width: 45px;
-
-            background: #0078bd;
-        }
-
-        .building:nth-child(1) {
-            height: 45px;
-        }
-
-        .building:nth-child(2) {
-            height: 70px;
-        }
-
-        .building:nth-child(3) {
-            height: 55px;
-        }
-
-        .building:nth-child(4) {
-            height: 82px;
-        }
-
-        .building:nth-child(5) {
-            height: 60px;
-        }
-
-        .building:nth-child(6) {
-            height: 75px;
-        }
-
-        .building:nth-child(7) {
-            height: 48px;
-        }
-
-        .building:nth-child(8) {
-            height: 65px;
-        }
-
-        .building:nth-child(9) {
-            height: 80px;
-        }
-
-        .building:nth-child(10) {
-            height: 52px;
-        }
-
-        /* =========================
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 750px) {
+
+            body {
+                overflow-y: auto;
+            }
+
+            .logo {
+                font-size: 34px;
+            }
+
+            .headline h1 {
+                font-size: 29px;
+            }
+
+            .headline h2 {
+                font-size: 21px;
+            }
 
             .content {
                 flex-direction: column;
 
+                gap: 25px;
+
                 align-items: center;
             }
 
-            .image-area {
+            .left {
+                width: 90%;
+                max-width: 365px;
+            }
+
+            .image-placeholder {
                 width: 100%;
             }
 
-            .login {
-                width: 100%;
-
-                max-width: 400px;
+            .signup {
+                width: 300px;
             }
 
-            .top-links {
-                display: none;
+            .footer {
+                margin-top: 35px;
+
+                padding: 15px;
+
+                flex-wrap: wrap;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- TOP BAR -->
+<div class="page">
 
-    <div class="topbar">
 
-        <div class="logo">
-            BloxNG.Drive
-        </div>
+    <!-- LOGO -->
 
-        <div class="top-links">
+    <div class="logo">
+        BloxNG.Drive
+    </div>
 
-            <a href="#">Games</a>
-            <a href="#">Forums</a>
-            <a href="#">Players</a>
 
-        </div>
+    <!-- HEADLINE -->
+
+    <div class="headline">
+
+        <h1>
+            Join the BloxNG.Drive community
+        </h1>
+
+        <h2>
+            and explore what others have created
+        </h2>
 
     </div>
 
 
     <!-- MAIN CONTENT -->
 
-    <main class="main">
+    <div class="content">
 
-        <h1 class="headline">
-            Welcome to BloxNG.Drive
-        </h1>
 
-        <div class="subtitle">
-            Drive. Build. Explore.
+        <!-- LEFT -->
+
+        <div class="left">
+
+            <div class="image-placeholder">
+                YOUR IMAGE HERE
+            </div>
+
+            <div class="build-text">
+                What will you build?
+            </div>
+
         </div>
 
 
-        <div class="content">
+        <!-- RIGHT -->
 
-            <!-- IMAGE PLACEHOLDER -->
+        <div class="signup">
 
-            <div class="image-area">
-                YOUR IMAGE GOES HERE
+            <div class="tabs">
+
+                <span class="active">
+                    Sign up
+                </span>
+
+                <a
+                    href="#"
+                    class="login-link">
+                    | Login
+                </a>
+
             </div>
 
 
-            <!-- SIGN UP -->
+            <!-- BIRTHDAY -->
 
-            <div class="login">
+            <div class="field">
 
-                <h2>
-                    Join BloxNG.Drive
-                </h2>
+                <label>
+                    Birthday
+                </label>
 
-                <form>
+                <div class="birthday">
 
-                    <label for="username">
-                        Username
-                    </label>
+                    <select>
+                        <option>Month</option>
+                    </select>
 
-                    <input
-                        id="username"
-                        type="text"
-                        placeholder="Username"
-                    >
+                    <select>
+                        <option>Day</option>
+                    </select>
 
+                    <select>
+                        <option>Year</option>
+                    </select>
 
-                    <label for="password">
-                        Password
-                    </label>
+                </div>
 
-                    <input
-                        id="password"
-                        type="password"
-                        placeholder="Password"
-                    >
-
-
-                    <button
-                        class="signup-button"
-                        type="submit">
-                        Sign Up
-                    </button>
-
-                </form>
-
-
-                <div class="login-link">
-
-                    Already have an account?
-
-                    <br>
-
-                    <a href="#">
-                        Log In
-                    </a>
-
+                <div class="help">
+                    Enter your birthday to have a personalized experience.
+                    It will not be given to any third party.
                 </div>
 
             </div>
 
-        </div>
 
-    </main>
+            <!-- GENDER -->
+
+            <div class="gender">
+
+                <div>
+                    Gender
+                </div>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender">
+                    Male
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender">
+                    Female
+                </label>
+
+            </div>
 
 
-    <!-- BOTTOM CITY -->
+            <!-- USERNAME -->
 
-    <div class="city">
+            <div class="field">
 
-        <div class="buildings">
+                <label>
+                    Username
+                </label>
 
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
-            <div class="building"></div>
+                <input
+                    type="text"
+                    autocomplete="username">
+
+                <div class="help">
+                    3-20 alphanumeric characters, no spaces
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="field">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    autocomplete="new-password">
+
+                <div class="help">
+                    6-20 characters, minimum of 4 letters & 2 numbers
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRM -->
+
+            <div class="field">
+
+                <label>
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    autocomplete="new-password">
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button class="signup-button">
+                Sign Up
+            </button>
 
         </div>
 
     </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <a href="#">
+            Home
+        </a>
+
+        <a href="#">
+            Forums
+        </a>
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Help
+        </a>
+
+        <span>
+            © 2026 BloxNG.Drive
+        </span>
+
+    </div>
+
+
+</div>
 
 </body>
 </html>
