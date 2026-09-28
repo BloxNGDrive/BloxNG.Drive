@@ -4,259 +4,422 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BloxNG.Drive - Login</title>
+    <title>BloxNG.Drive</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
+        html,
         body {
             margin: 0;
-            min-height: 100vh;
+            width: 100%;
+            min-height: 100%;
+        }
 
+        body {
             font-family: Arial, Helvetica, sans-serif;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #6f879c 0%,
-                    #536b80 45%,
-                    #3d5265 100%
-                );
-
-            color: #333;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Main login area */
-
-        .login-container {
-            width: 390px;
-        }
-
-        /* Logo */
-
-        .logo {
-            text-align: center;
-            margin-bottom: 18px;
+            background: #00a2ff;
 
             color: white;
+        }
 
-            font-size: 38px;
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .topbar {
+            height: 64px;
+
+            background: #eeeeee;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 35px;
+
+            box-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            color: #333333;
+
+            font-size: 28px;
             font-weight: bold;
 
             letter-spacing: -1px;
-
-            text-shadow:
-                0 2px 3px rgba(0, 0, 0, 0.45);
         }
 
-        .logo-subtitle {
-            text-align: center;
+        .top-links {
+            margin-left: auto;
 
-            color: #dce5ec;
+            display: flex;
+            gap: 25px;
+        }
+
+        .top-links a {
+            color: #555555;
+
+            text-decoration: none;
 
             font-size: 14px;
-
-            margin-top: -10px;
-            margin-bottom: 18px;
         }
 
-        /* Login box */
+        .top-links a:hover {
+            color: #111111;
+        }
 
-        .login-box {
-            background: #f4f4f4;
+        /* =========================
+           MAIN
+        ========================= */
 
-            border: 1px solid #303c46;
+        .main {
+            max-width: 1100px;
 
-            border-radius: 5px;
+            margin: 0 auto;
+
+            padding: 55px 30px 120px;
+
+            text-align: center;
+        }
+
+        .headline {
+            font-size: 38px;
+
+            font-weight: normal;
+
+            margin: 0 0 10px;
+
+            text-shadow:
+                0 2px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .subtitle {
+            font-size: 18px;
+
+            margin-bottom: 45px;
+
+            opacity: 0.95;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 35px;
+
+            text-align: left;
+        }
+
+        /* IMAGE PLACEHOLDER */
+
+        .image-area {
+            width: 570px;
+
+            min-height: 350px;
+
+            background: #168bd0;
+
+            border: 1px solid rgba(0, 0, 0, 0.15);
 
             box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.35);
-        }
+                0 3px 8px rgba(0, 0, 0, 0.2);
 
-        .login-header {
-            padding: 14px 18px;
+            display: flex;
 
-            color: white;
+            justify-content: center;
+
+            align-items: center;
+
+            color: rgba(255, 255, 255, 0.7);
 
             font-size: 18px;
-            font-weight: bold;
-
-            border-radius: 5px 5px 0 0;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    #667b8c,
-                    #465a6b
-                );
-
-            border-bottom: 1px solid #35434e;
         }
 
-        .login-content {
-            padding: 22px;
-        }
+        /* =========================
+           LOGIN BOX
+        ========================= */
 
-        /* Labels */
-
-        label {
-            display: block;
-
-            font-size: 13px;
-            font-weight: bold;
-
-            margin-bottom: 6px;
-
-            color: #444;
-        }
-
-        /* Inputs */
-
-        input {
-            width: 100%;
-
-            height: 40px;
-
-            padding: 8px 10px;
-
-            margin-bottom: 16px;
-
-            border: 1px solid #aaa;
-
-            border-radius: 3px;
+        .login {
+            width: 340px;
 
             background: white;
 
-            font-size: 15px;
+            padding: 28px;
 
-            outline: none;
-
-            box-shadow:
-                inset 0 1px 2px rgba(0, 0, 0, 0.08);
-        }
-
-        input:focus {
-            border-color: #4b83ad;
+            border-radius: 3px;
 
             box-shadow:
-                0 0 3px rgba(55, 120, 170, 0.5);
+                0 4px 12px rgba(0, 0, 0, 0.25);
+
+            color: #333333;
         }
 
-        /* Login button */
+        .login h2 {
+            margin: 0 0 20px;
 
-        .login-button {
+            text-align: center;
+
+            font-size: 25px;
+
+            font-weight: normal;
+        }
+
+        .login label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 6px;
+        }
+
+        .login input {
             width: 100%;
 
             height: 42px;
 
-            border: 1px solid #245a80;
+            border: 1px solid #cccccc;
 
             border-radius: 3px;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #5fa0d0,
-                    #3476a6
-                );
+            padding: 8px 10px;
+
+            margin-bottom: 15px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .login input:focus {
+            border-color: #00a2ff;
+        }
+
+        /* =========================
+           GREEN BUTTON
+        ========================= */
+
+        .signup-button {
+            width: 100%;
+
+            height: 45px;
+
+            border: 0;
+
+            border-radius: 3px;
+
+            background: #00b83f;
 
             color: white;
 
-            font-size: 15px;
+            font-size: 17px;
+
             font-weight: bold;
 
             cursor: pointer;
-
-            text-shadow:
-                0 1px 1px rgba(0, 0, 0, 0.35);
         }
 
-        .login-button:hover {
-            background:
-                linear-gradient(
-                    to bottom,
-                    #70acd8,
-                    #3d83b2
-                );
+        .signup-button:hover {
+            background: #00a939;
         }
 
-        .login-button:active {
-            background:
-                linear-gradient(
-                    to bottom,
-                    #3476a6,
-                    #286489
-                );
-        }
-
-        /* Links */
-
-        .links {
+        .login-link {
             text-align: center;
 
             margin-top: 18px;
 
             font-size: 13px;
+
+            color: #777777;
         }
 
-        .links a {
-            color: #3275a3;
+        .login-link a {
+            color: #008bd1;
 
             text-decoration: none;
+
+            font-weight: bold;
         }
 
-        .links a:hover {
+        .login-link a:hover {
             text-decoration: underline;
         }
 
-        .divider {
-            margin: 14px 0;
+        /* =========================
+           BOTTOM CITY PLACEHOLDER
+        ========================= */
 
-            border-top: 1px solid #d0d0d0;
+        .city {
+            position: fixed;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            height: 85px;
+
+            background: #0088d4;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            overflow: hidden;
         }
 
-        /* Footer */
+        .buildings {
+            width: 100%;
 
-        .footer {
-            text-align: center;
+            height: 100%;
 
-            color: #d3dce3;
+            display: flex;
 
-            font-size: 11px;
+            align-items: flex-end;
 
-            margin-top: 18px;
+            justify-content: center;
 
-            text-shadow:
-                0 1px 2px rgba(0, 0, 0, 0.4);
+            gap: 5px;
+        }
+
+        .building {
+            width: 45px;
+
+            background: #0078bd;
+        }
+
+        .building:nth-child(1) {
+            height: 45px;
+        }
+
+        .building:nth-child(2) {
+            height: 70px;
+        }
+
+        .building:nth-child(3) {
+            height: 55px;
+        }
+
+        .building:nth-child(4) {
+            height: 82px;
+        }
+
+        .building:nth-child(5) {
+            height: 60px;
+        }
+
+        .building:nth-child(6) {
+            height: 75px;
+        }
+
+        .building:nth-child(7) {
+            height: 48px;
+        }
+
+        .building:nth-child(8) {
+            height: 65px;
+        }
+
+        .building:nth-child(9) {
+            height: 80px;
+        }
+
+        .building:nth-child(10) {
+            height: 52px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .content {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .image-area {
+                width: 100%;
+            }
+
+            .login {
+                width: 100%;
+
+                max-width: 400px;
+            }
+
+            .top-links {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="login-container">
+    <!-- TOP BAR -->
+
+    <div class="topbar">
 
         <div class="logo">
             BloxNG.Drive
         </div>
 
-        <div class="logo-subtitle">
+        <div class="top-links">
+
+            <a href="#">Games</a>
+            <a href="#">Forums</a>
+            <a href="#">Players</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <h1 class="headline">
+            Welcome to BloxNG.Drive
+        </h1>
+
+        <div class="subtitle">
             Drive. Build. Explore.
         </div>
 
-        <div class="login-box">
 
-            <div class="login-header">
-                Login
+        <div class="content">
+
+            <!-- IMAGE PLACEHOLDER -->
+
+            <div class="image-area">
+                YOUR IMAGE GOES HERE
             </div>
 
-            <div class="login-content">
+
+            <!-- SIGN UP -->
+
+            <div class="login">
+
+                <h2>
+                    Join BloxNG.Drive
+                </h2>
 
                 <form>
 
@@ -265,47 +428,40 @@
                     </label>
 
                     <input
-                        type="text"
                         id="username"
-                        name="username"
+                        type="text"
                         placeholder="Username"
                     >
+
 
                     <label for="password">
                         Password
                     </label>
 
                     <input
-                        type="password"
                         id="password"
-                        name="password"
+                        type="password"
                         placeholder="Password"
                     >
 
+
                     <button
-                        type="submit"
-                        class="login-button">
-                        Login
+                        class="signup-button"
+                        type="submit">
+                        Sign Up
                     </button>
 
                 </form>
 
-                <div class="links">
 
-                    <a href="#">
-                        Forgot your password?
-                    </a>
+                <div class="login-link">
 
-                    <div class="divider"></div>
-
-                    <span>
-                        Don't have an account?
-                    </span>
+                    Already have an account?
 
                     <br>
 
                     <a href="#">
-                        Create an account
+                        Log In
                     </a>
 
                 </div>
@@ -314,8 +470,26 @@
 
         </div>
 
-        <div class="footer">
-            © 2026 BloxNG.Drive
+    </main>
+
+
+    <!-- BOTTOM CITY -->
+
+    <div class="city">
+
+        <div class="buildings">
+
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+
         </div>
 
     </div>
