@@ -31,14 +31,13 @@
                 );
 
             color: white;
-
             overflow-x: hidden;
         }
 
 
-        /* =========================================
+        /* =========================
            PAGE
-        ========================================= */
+        ========================= */
 
         .page {
             width: 100%;
@@ -46,7 +45,6 @@
 
             display: flex;
             flex-direction: column;
-
             align-items: center;
 
             padding:
@@ -56,21 +54,25 @@
         }
 
 
-         /* =========================================
-                   LOGO
-                ========================================= */
-        
-        <img
-            src="logo.png"
-            class="logo"
-            alt="BloxNG.Drive"
-        >
-        /* =========================================
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            width: clamp(180px, 25vw, 320px);
+            height: auto;
+
+            display: block;
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================
            HEADLINE
-        ========================================= */
+        ========================= */
 
         .headline {
-
             width: 100%;
 
             text-align: center;
@@ -80,7 +82,6 @@
         }
 
         .headline h1 {
-
             margin: 0;
 
             font-size:
@@ -95,7 +96,6 @@
         }
 
         .headline h2 {
-
             margin:
                 clamp(7px, 1vw, 12px)
                 0
@@ -111,20 +111,17 @@
         }
 
 
-        /* =========================================
+        /* =========================
            MAIN CONTENT
-        ========================================= */
+        ========================= */
 
         .content {
-
             width: 100%;
-
             max-width: 1050px;
 
             display: flex;
 
             justify-content: center;
-
             align-items: flex-start;
 
             gap:
@@ -135,12 +132,11 @@
         }
 
 
-        /* =========================================
+        /* =========================
            LEFT SIDE
-        ========================================= */
+        ========================= */
 
         .left {
-
             width: min(50%, 450px);
 
             flex: 1;
@@ -149,33 +145,23 @@
         }
 
 
-        .image-placeholder {
+        /* Main homepage image */
 
+        .image-placeholder {
             width: 100%;
 
             aspect-ratio: 16 / 9;
 
-            background: #22a7e8;
+            object-fit: cover;
+
+            display: block;
 
             box-shadow:
                 0 1px 4px rgba(0,0,0,.35);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color:
-                rgba(255,255,255,.55);
-
-            font-size:
-                clamp(12px, 1.2vw, 15px);
         }
 
 
         .build-text {
-
             margin-top:
                 clamp(10px, 1.5vw, 16px);
 
@@ -189,12 +175,11 @@
         }
 
 
-        /* =========================================
-           RIGHT FORM
-        ========================================= */
+        /* =========================
+           FORM PANEL
+        ========================= */
 
         .form-panel {
-
             width: min(35%, 300px);
 
             min-width: 245px;
@@ -210,12 +195,11 @@
         }
 
 
-        /* =========================================
+        /* =========================
            TABS
-        ========================================= */
+        ========================= */
 
         .tabs {
-
             font-size:
                 clamp(14px, 1.4vw, 16px);
 
@@ -225,7 +209,6 @@
         }
 
         .tab {
-
             color: #8fc2ed;
 
             text-decoration: none;
@@ -234,37 +217,32 @@
         }
 
         .tab.active {
-
             color: white;
         }
 
 
-        /* =========================================
+        /* =========================
            FORMS
-        ========================================= */
+        ========================= */
 
         .form {
-
             display: none;
         }
 
         .form.active {
-
             display: block;
         }
 
 
-        /* =========================================
-           FORM FIELDS
-        ========================================= */
+        /* =========================
+           FIELDS
+        ========================= */
 
         .field {
-
             margin-top: 9px;
         }
 
         .field label {
-
             display: block;
 
             font-size:
@@ -274,17 +252,18 @@
         }
 
         .field input {
-
             width: 100%;
 
             height:
                 clamp(25px, 2.2vw, 30px);
 
-            border: 1px solid #999;
+            border:
+                1px solid #999;
 
             border-radius: 0;
 
-            padding: 3px 6px;
+            padding:
+                3px 6px;
 
             font-size:
                 clamp(11px, 1vw, 13px);
@@ -295,17 +274,15 @@
         }
 
         .field input:focus {
-
             border-color: #6da9dc;
         }
 
 
-        /* =========================================
+        /* =========================
            HELP TEXT
-        ========================================= */
+        ========================= */
 
         .help {
-
             font-size:
                 clamp(8px, .75vw, 10px);
 
@@ -317,23 +294,22 @@
         }
 
 
-        /* =========================================
+        /* =========================
            BIRTHDAY
-        ========================================= */
+        ========================= */
 
         .birthday {
-
             display: flex;
 
             gap: 4px;
         }
 
         .birthday select {
-
             height:
                 clamp(24px, 2vw, 28px);
 
-            border: 1px solid #999;
+            border:
+                1px solid #999;
 
             font-size:
                 clamp(9px, .8vw, 11px);
@@ -346,12 +322,11 @@
         }
 
 
-        /* =========================================
+        /* =========================
            GENDER
-        ========================================= */
+        ========================= */
 
         .gender {
-
             font-size:
                 clamp(10px, .9vw, 12px);
 
@@ -359,12 +334,10 @@
         }
 
         .gender-title {
-
             margin-bottom: 4px;
         }
 
         .gender label {
-
             display: inline-flex;
 
             align-items: center;
@@ -373,12 +346,11 @@
         }
 
 
-        /* =========================================
-           BUTTON
-        ========================================= */
+        /* =========================
+           GREEN BUTTON
+        ========================= */
 
         .action-button {
-
             width: 100%;
 
             height:
@@ -409,7 +381,6 @@
         }
 
         .action-button:hover {
-
             background:
                 linear-gradient(
                     to bottom,
@@ -419,12 +390,11 @@
         }
 
 
-        /* =========================================
-           LOGIN HELP
-        ========================================= */
+        /* =========================
+           FORGOT PASSWORD
+        ========================= */
 
         .forgot {
-
             display: block;
 
             margin-top: 10px;
@@ -440,29 +410,24 @@
         }
 
         .forgot:hover {
-
             text-decoration: underline;
         }
 
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         .footer {
-
             width: 100%;
 
             margin-top: auto;
 
-            padding:
-                25px
-                10px;
+            padding: 25px 10px;
 
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
             flex-wrap: wrap;
@@ -476,38 +441,33 @@
         }
 
         .footer a {
-
             color: #d6e6f7;
 
             text-decoration: none;
         }
 
         .footer a:hover {
-
             text-decoration: underline;
         }
 
 
-        /* =========================================
-           TABLET
-        ========================================= */
+        /* =========================
+           TABLET / MOBILE
+        ========================= */
 
         @media (max-width: 700px) {
 
             .content {
-
                 flex-direction: column;
 
                 align-items: center;
             }
 
             .left {
-
                 width: min(90%, 450px);
             }
 
             .form-panel {
-
                 width: min(90%, 320px);
 
                 min-width: 0;
@@ -515,36 +475,31 @@
         }
 
 
-        /* =========================================
-           VERY SMALL SCREENS
-        ========================================= */
+        /* =========================
+           SMALL PHONES
+        ========================= */
 
         @media (max-width: 400px) {
 
             .page {
-
                 padding-left: 10px;
                 padding-right: 10px;
             }
 
             .headline h1 {
-
                 font-size: 23px;
             }
 
             .headline h2 {
-
                 font-size: 17px;
             }
 
             .form-panel {
-
                 width: 100%;
             }
         }
 
     </style>
-
 </head>
 
 
@@ -553,14 +508,20 @@
 <div class="page">
 
 
-    <!-- LOGO -->
+    <!-- =========================
+         LOGO
+    ========================= -->
 
-    <div class="logo">
-        BloxNG.Drive
-    </div>
+    <img
+        src="logo.png"
+        class="logo"
+        alt="BloxNG.Drive"
+    >
 
 
-    <!-- HEADLINE -->
+    <!-- =========================
+         HEADLINE
+    ========================= -->
 
     <div class="headline">
 
@@ -575,18 +536,24 @@
     </div>
 
 
-    <!-- CONTENT -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
 
     <div class="content">
 
 
-        <!-- IMAGE -->
+        <!-- =========================
+             LEFT SIDE
+        ========================= -->
 
         <div class="left">
 
-            <div class="image-placeholder">
-                YOUR IMAGE HERE
-            </div>
+            <img
+                src="homepage.png"
+                class="image-placeholder"
+                alt="BloxNG.Drive"
+            >
 
             <div class="build-text">
                 What will you build?
@@ -595,7 +562,9 @@
         </div>
 
 
-        <!-- FORM PANEL -->
+        <!-- =========================
+             FORM PANEL
+        ========================= -->
 
         <div class="form-panel">
 
@@ -607,18 +576,18 @@
                 <a
                     href="#"
                     id="signupTab"
-                    class="tab active">
+                    class="tab active"
+                >
                     Sign up
                 </a>
 
-                <span>
-                    |
-                </span>
+                <span>|</span>
 
                 <a
                     href="#"
                     id="loginTab"
-                    class="tab">
+                    class="tab"
+                >
                     Login
                 </a>
 
@@ -627,14 +596,15 @@
 
             <!-- =========================
                  SIGN UP FORM
-            ========================== -->
+            ========================= -->
 
             <form
                 id="signupForm"
-                class="form active">
+                class="form active"
+            >
 
 
-                <!-- BIRTHDAY -->
+                <!-- Birthday -->
 
                 <div class="field">
 
@@ -646,27 +616,106 @@
 
                         <select>
                             <option>Month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
                         </select>
 
                         <select>
                             <option>Day</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
                         </select>
 
                         <select>
                             <option>Year</option>
+                            <option>2026</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
                         </select>
 
                     </div>
 
                     <div class="help">
-                        Enter your birthday to have a personalized
-                        experience.
+                        Enter your birthday to have a personalized experience.
                     </div>
 
                 </div>
 
 
-                <!-- GENDER -->
+                <!-- Gender -->
 
                 <div class="gender">
 
@@ -675,25 +724,33 @@
                     </div>
 
                     <label>
+
                         <input
                             type="radio"
                             name="gender"
-                            value="male">
+                            value="male"
+                        >
+
                         Male
+
                     </label>
 
                     <label>
+
                         <input
                             type="radio"
                             name="gender"
-                            value="female">
+                            value="female"
+                        >
+
                         Female
+
                     </label>
 
                 </div>
 
 
-                <!-- USERNAME -->
+                <!-- Username -->
 
                 <div class="field">
 
@@ -704,7 +761,8 @@
                     <input
                         type="text"
                         name="username"
-                        autocomplete="username">
+                        autocomplete="username"
+                    >
 
                     <div class="help">
                         3-20 alphanumeric characters, no spaces
@@ -713,7 +771,7 @@
                 </div>
 
 
-                <!-- PASSWORD -->
+                <!-- Password -->
 
                 <div class="field">
 
@@ -724,7 +782,8 @@
                     <input
                         type="password"
                         name="password"
-                        autocomplete="new-password">
+                        autocomplete="new-password"
+                    >
 
                     <div class="help">
                         6-20 characters
@@ -733,7 +792,7 @@
                 </div>
 
 
-                <!-- CONFIRM PASSWORD -->
+                <!-- Confirm Password -->
 
                 <div class="field">
 
@@ -744,32 +803,36 @@
                     <input
                         type="password"
                         name="confirmPassword"
-                        autocomplete="new-password">
+                        autocomplete="new-password"
+                    >
 
                 </div>
 
 
+                <!-- Sign Up Button -->
+
                 <button
                     type="submit"
-                    class="action-button">
-
+                    class="action-button"
+                >
                     Sign Up
-
                 </button>
+
 
             </form>
 
 
             <!-- =========================
                  LOGIN FORM
-            ========================== -->
+            ========================= -->
 
             <form
                 id="loginForm"
-                class="form">
+                class="form"
+            >
 
 
-                <!-- USERNAME -->
+                <!-- Username -->
 
                 <div class="field">
 
@@ -780,12 +843,13 @@
                     <input
                         type="text"
                         name="loginUsername"
-                        autocomplete="username">
+                        autocomplete="username"
+                    >
 
                 </div>
 
 
-                <!-- PASSWORD -->
+                <!-- Password -->
 
                 <div class="field">
 
@@ -796,36 +860,43 @@
                     <input
                         type="password"
                         name="loginPassword"
-                        autocomplete="current-password">
+                        autocomplete="current-password"
+                    >
 
                 </div>
 
 
+                <!-- Login Button -->
+
                 <button
                     type="submit"
-                    class="action-button">
-
+                    class="action-button"
+                >
                     Login
-
                 </button>
 
 
+                <!-- Forgot Password -->
+
                 <a
                     href="#"
-                    class="forgot">
-
+                    class="forgot"
+                >
                     Forgot your password?
-
                 </a>
 
+
             </form>
+
 
         </div>
 
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <div class="footer">
 
@@ -859,12 +930,13 @@
 
     </div>
 
+
 </div>
 
 
-<!-- =========================================
-     LOGIN / SIGNUP SWITCHING
-========================================= -->
+<!-- =========================
+     SIGN UP / LOGIN SCRIPT
+========================= -->
 
 <script>
 
@@ -881,36 +953,47 @@
         document.getElementById("loginForm");
 
 
-    signupTab.addEventListener("click", function(event) {
+    /* SIGN UP TAB */
 
-        event.preventDefault();
+    signupTab.addEventListener(
+        "click",
+        function(event) {
 
-        signupTab.classList.add("active");
+            event.preventDefault();
 
-        loginTab.classList.remove("active");
+            signupTab.classList.add("active");
 
-        signupForm.classList.add("active");
+            loginTab.classList.remove("active");
 
-        loginForm.classList.remove("active");
+            signupForm.classList.add("active");
 
-    });
+            loginForm.classList.remove("active");
+
+        }
+    );
 
 
-    loginTab.addEventListener("click", function(event) {
+    /* LOGIN TAB */
 
-        event.preventDefault();
+    loginTab.addEventListener(
+        "click",
+        function(event) {
 
-        loginTab.classList.add("active");
+            event.preventDefault();
 
-        signupTab.classList.remove("active");
+            loginTab.classList.add("active");
 
-        loginForm.classList.add("active");
+            signupTab.classList.remove("active");
 
-        signupForm.classList.remove("active");
+            loginForm.classList.add("active");
 
-    });
+            signupForm.classList.remove("active");
+
+        }
+    );
 
 </script>
+
 
 </body>
 </html>
