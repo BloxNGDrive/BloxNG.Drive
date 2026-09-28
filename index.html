@@ -4,155 +4,318 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Game Website</title>
+    <title>BloxNG.Drive - Login</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
+            min-height: 100vh;
+
             font-family: Arial, Helvetica, sans-serif;
-            background: #e5e5e5;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #6f879c 0%,
+                    #536b80 45%,
+                    #3d5265 100%
+                );
+
             color: #333;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .header {
-            background: #333;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            padding: 0 30px;
-            color: white;
+        /* Main login area */
+
+        .login-container {
+            width: 390px;
         }
+
+        /* Logo */
 
         .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
+            text-align: center;
+            margin-bottom: 18px;
 
-        .nav {
-            margin-left: 40px;
-        }
-
-        .nav a {
             color: white;
-            text-decoration: none;
-            margin-right: 25px;
-            font-size: 16px;
+
+            font-size: 38px;
+            font-weight: bold;
+
+            letter-spacing: -1px;
+
+            text-shadow:
+                0 2px 3px rgba(0, 0, 0, 0.45);
         }
 
-        .nav a:hover {
+        .logo-subtitle {
+            text-align: center;
+
+            color: #dce5ec;
+
+            font-size: 14px;
+
+            margin-top: -10px;
+            margin-bottom: 18px;
+        }
+
+        /* Login box */
+
+        .login-box {
+            background: #f4f4f4;
+
+            border: 1px solid #303c46;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .login-header {
+            padding: 14px 18px;
+
+            color: white;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            border-radius: 5px 5px 0 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #667b8c,
+                    #465a6b
+                );
+
+            border-bottom: 1px solid #35434e;
+        }
+
+        .login-content {
+            padding: 22px;
+        }
+
+        /* Labels */
+
+        label {
+            display: block;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 6px;
+
+            color: #444;
+        }
+
+        /* Inputs */
+
+        input {
+            width: 100%;
+
+            height: 40px;
+
+            padding: 8px 10px;
+
+            margin-bottom: 16px;
+
+            border: 1px solid #aaa;
+
+            border-radius: 3px;
+
+            background: white;
+
+            font-size: 15px;
+
+            outline: none;
+
+            box-shadow:
+                inset 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        input:focus {
+            border-color: #4b83ad;
+
+            box-shadow:
+                0 0 3px rgba(55, 120, 170, 0.5);
+        }
+
+        /* Login button */
+
+        .login-button {
+            width: 100%;
+
+            height: 42px;
+
+            border: 1px solid #245a80;
+
+            border-radius: 3px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #5fa0d0,
+                    #3476a6
+                );
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            text-shadow:
+                0 1px 1px rgba(0, 0, 0, 0.35);
+        }
+
+        .login-button:hover {
+            background:
+                linear-gradient(
+                    to bottom,
+                    #70acd8,
+                    #3d83b2
+                );
+        }
+
+        .login-button:active {
+            background:
+                linear-gradient(
+                    to bottom,
+                    #3476a6,
+                    #286489
+                );
+        }
+
+        /* Links */
+
+        .links {
+            text-align: center;
+
+            margin-top: 18px;
+
+            font-size: 13px;
+        }
+
+        .links a {
+            color: #3275a3;
+
+            text-decoration: none;
+        }
+
+        .links a:hover {
             text-decoration: underline;
         }
 
-        .container {
-            width: 1100px;
-            max-width: calc(100% - 40px);
-            margin: 30px auto;
+        .divider {
+            margin: 14px 0;
+
+            border-top: 1px solid #d0d0d0;
         }
 
-        .welcome {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 25px;
-        }
+        /* Footer */
 
-        .welcome h1 {
-            margin-top: 0;
-        }
+        .footer {
+            text-align: center;
 
-        .section {
-            background: white;
-            border: 1px solid #ccc;
-            margin-top: 20px;
-        }
+            color: #d3dce3;
 
-        .section-title {
-            background: #444;
-            color: white;
-            padding: 12px 15px;
-            font-weight: bold;
-        }
+            font-size: 11px;
 
-        .section-content {
-            padding: 20px;
-        }
+            margin-top: 18px;
 
-        .forum {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .forum:last-child {
-            border-bottom: none;
-        }
-
-        .forum h3 {
-            margin: 0 0 5px 0;
-        }
-
-        .forum p {
-            margin: 0;
-            color: #777;
+            text-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="header">
+    <div class="login-container">
 
         <div class="logo">
-            MY GAME
+            BloxNG.Drive
         </div>
 
-        <div class="nav">
-            <a href="index.html">Home</a>
-            <a href="#">Games</a>
-            <a href="#">Forums</a>
-            <a href="#">Players</a>
+        <div class="logo-subtitle">
+            Drive. Build. Explore.
         </div>
 
-    </div>
+        <div class="login-box">
 
-    <div class="container">
-
-        <div class="welcome">
-            <h1>Welcome to MY GAME!</h1>
-
-            <p>
-                Welcome to the official community website.
-            </p>
-
-            <p>
-                Create an account, play the game, meet other players,
-                and share your creations!
-            </p>
-        </div>
-
-        <div class="section">
-
-            <div class="section-title">
-                Community Forums
+            <div class="login-header">
+                Login
             </div>
 
-            <div class="section-content">
+            <div class="login-content">
 
-                <div class="forum">
-                    <h3>General Discussion</h3>
-                    <p>Talk about the game and the community.</p>
-                </div>
+                <form>
 
-                <div class="forum">
-                    <h3>Cars & Driving</h3>
-                    <p>Talk about cars, driving and physics.</p>
-                </div>
+                    <label for="username">
+                        Username
+                    </label>
 
-                <div class="forum">
-                    <h3>Building & Studio</h3>
-                    <p>Share your creations and builds.</p>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                    >
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                    >
+
+                    <button
+                        type="submit"
+                        class="login-button">
+                        Login
+                    </button>
+
+                </form>
+
+                <div class="links">
+
+                    <a href="#">
+                        Forgot your password?
+                    </a>
+
+                    <div class="divider"></div>
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <br>
+
+                    <a href="#">
+                        Create an account
+                    </a>
+
                 </div>
 
             </div>
 
+        </div>
+
+        <div class="footer">
+            © 2026 BloxNG.Drive
         </div>
 
     </div>
