@@ -16,7 +16,7 @@
         body {
             margin: 0;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
         }
 
         body {
@@ -37,7 +37,7 @@
 
 
         /* =========================================
-           MAIN PAGE
+           PAGE
         ========================================= */
 
         .page {
@@ -48,6 +48,11 @@
             flex-direction: column;
 
             align-items: center;
+
+            padding:
+                clamp(15px, 3vw, 30px)
+                clamp(15px, 4vw, 50px)
+                0;
         }
 
 
@@ -56,15 +61,17 @@
         ========================================= */
 
         .logo {
-            margin-top: 25px;
 
-            font-size: 42px;
+            font-size:
+                clamp(30px, 4vw, 44px);
 
             font-weight: 900;
 
             letter-spacing: -2px;
 
             color: white;
+
+            text-align: center;
 
             text-shadow:
                 2px 2px 0 #222,
@@ -77,15 +84,21 @@
         ========================================= */
 
         .headline {
-            margin-top: 20px;
+
+            width: 100%;
 
             text-align: center;
+
+            margin-top:
+                clamp(15px, 2vw, 24px);
         }
 
         .headline h1 {
+
             margin: 0;
 
-            font-size: 39px;
+            font-size:
+                clamp(25px, 3.2vw, 40px);
 
             line-height: 1.15;
 
@@ -96,9 +109,14 @@
         }
 
         .headline h2 {
-            margin: 12px 0 0;
 
-            font-size: 28px;
+            margin:
+                clamp(7px, 1vw, 12px)
+                0
+                0;
+
+            font-size:
+                clamp(18px, 2.2vw, 28px);
 
             font-weight: 700;
 
@@ -108,53 +126,75 @@
 
 
         /* =========================================
-           CONTENT
+           MAIN CONTENT
         ========================================= */
 
         .content {
+
+            width: 100%;
+
+            max-width: 1050px;
+
             display: flex;
 
-            gap: 70px;
-
-            margin-top: 28px;
+            justify-content: center;
 
             align-items: flex-start;
+
+            gap:
+                clamp(25px, 6vw, 75px);
+
+            margin-top:
+                clamp(25px, 3vw, 35px);
         }
 
 
         /* =========================================
-           LEFT IMAGE
+           LEFT SIDE
         ========================================= */
 
         .left {
-            width: 365px;
+
+            width: min(50%, 450px);
+
+            flex: 1;
 
             text-align: center;
         }
 
+
         .image-placeholder {
-            width: 365px;
-            height: 198px;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
 
             background: #22a7e8;
 
             box-shadow:
-                0 1px 3px rgba(0,0,0,.35);
+                0 1px 4px rgba(0,0,0,.35);
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            color: rgba(255,255,255,.55);
+            color:
+                rgba(255,255,255,.55);
 
-            font-size: 14px;
+            font-size:
+                clamp(12px, 1.2vw, 15px);
         }
 
-        .build-text {
-            margin-top: 15px;
 
-            font-size: 21px;
+        .build-text {
+
+            margin-top:
+                clamp(10px, 1.5vw, 16px);
+
+            font-size:
+                clamp(18px, 2vw, 23px);
 
             font-weight: bold;
 
@@ -164,15 +204,17 @@
 
 
         /* =========================================
-           SIGNUP PANEL
+           RIGHT FORM
         ========================================= */
 
-        .signup {
-            width: 245px;
+        .form-panel {
 
-            min-height: 350px;
+            width: min(35%, 300px);
 
-            padding: 20px 23px;
+            min-width: 245px;
+
+            padding:
+                clamp(16px, 2vw, 23px);
 
             background:
                 rgba(18, 73, 137, .62);
@@ -183,58 +225,83 @@
 
 
         /* =========================================
-           SIGNUP / LOGIN
+           TABS
         ========================================= */
 
         .tabs {
-            font-size: 15px;
+
+            font-size:
+                clamp(14px, 1.4vw, 16px);
 
             font-weight: bold;
 
             margin-bottom: 10px;
         }
 
-        .tabs .active {
-            color: white;
-        }
+        .tab {
 
-        .tabs .login-link {
             color: #8fc2ed;
 
             text-decoration: none;
 
-            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+
+            color: white;
         }
 
 
         /* =========================================
-           FORM
+           FORMS
+        ========================================= */
+
+        .form {
+
+            display: none;
+        }
+
+        .form.active {
+
+            display: block;
+        }
+
+
+        /* =========================================
+           FORM FIELDS
         ========================================= */
 
         .field {
+
             margin-top: 9px;
         }
 
         .field label {
+
             display: block;
 
-            font-size: 12px;
+            font-size:
+                clamp(11px, 1vw, 13px);
 
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .field input {
+
             width: 100%;
 
-            height: 23px;
+            height:
+                clamp(25px, 2.2vw, 30px);
 
-            border: 1px solid #aaa;
+            border: 1px solid #999;
 
             border-radius: 0;
 
-            padding: 2px 5px;
+            padding: 3px 6px;
 
-            font-size: 12px;
+            font-size:
+                clamp(11px, 1vw, 13px);
 
             background: white;
 
@@ -242,18 +309,21 @@
         }
 
         .field input:focus {
+
             border-color: #6da9dc;
         }
 
 
         /* =========================================
-           SMALL HELP TEXT
+           HELP TEXT
         ========================================= */
 
         .help {
-            font-size: 9px;
 
-            line-height: 11px;
+            font-size:
+                clamp(8px, .75vw, 10px);
+
+            line-height: 1.2;
 
             margin-top: 3px;
 
@@ -266,21 +336,27 @@
         ========================================= */
 
         .birthday {
+
             display: flex;
 
             gap: 4px;
-
-            margin-top: 4px;
         }
 
         .birthday select {
-            height: 22px;
 
-            border: 1px solid #aaa;
+            height:
+                clamp(24px, 2vw, 28px);
 
-            font-size: 11px;
+            border: 1px solid #999;
+
+            font-size:
+                clamp(9px, .8vw, 11px);
 
             background: white;
+
+            flex: 1;
+
+            min-width: 0;
         }
 
 
@@ -289,28 +365,40 @@
         ========================================= */
 
         .gender {
-            font-size: 11px;
+
+            font-size:
+                clamp(10px, .9vw, 12px);
 
             margin-top: 10px;
         }
 
-        .gender label {
-            display: inline;
+        .gender-title {
 
-            margin-right: 12px;
+            margin-bottom: 4px;
+        }
+
+        .gender label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            margin-right: 10px;
         }
 
 
         /* =========================================
-           SIGN UP BUTTON
+           BUTTON
         ========================================= */
 
-        .signup-button {
+        .action-button {
+
             width: 100%;
 
-            height: 40px;
+            height:
+                clamp(38px, 3.5vw, 45px);
 
-            margin-top: 8px;
+            margin-top: 12px;
 
             border: none;
 
@@ -323,7 +411,8 @@
 
             color: white;
 
-            font-size: 18px;
+            font-size:
+                clamp(15px, 1.6vw, 19px);
 
             font-weight: bold;
 
@@ -333,7 +422,8 @@
                 0 1px 1px rgba(0,0,0,.25);
         }
 
-        .signup-button:hover {
+        .action-button:hover {
+
             background:
                 linear-gradient(
                     to bottom,
@@ -344,91 +434,126 @@
 
 
         /* =========================================
+           LOGIN HELP
+        ========================================= */
+
+        .forgot {
+
+            display: block;
+
+            margin-top: 10px;
+
+            text-align: center;
+
+            color: #d7eafa;
+
+            font-size:
+                clamp(9px, .9vw, 11px);
+
+            text-decoration: none;
+        }
+
+        .forgot:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* =========================================
            FOOTER
         ========================================= */
 
         .footer {
-            margin-top: auto;
 
             width: 100%;
 
-            min-height: 58px;
+            margin-top: auto;
 
-            border-top: 1px solid rgba(255,255,255,.12);
+            padding:
+                25px
+                10px;
 
             display: flex;
 
-            align-items: center;
-
             justify-content: center;
 
-            gap: 15px;
+            align-items: center;
 
-            font-size: 9px;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            font-size:
+                clamp(8px, .8vw, 10px);
 
             color: #d6e6f7;
         }
 
         .footer a {
+
             color: #d6e6f7;
 
             text-decoration: none;
         }
 
         .footer a:hover {
+
             text-decoration: underline;
         }
 
 
         /* =========================================
-           MOBILE
+           TABLET
         ========================================= */
 
-        @media (max-width: 750px) {
-
-            body {
-                overflow-y: auto;
-            }
-
-            .logo {
-                font-size: 34px;
-            }
-
-            .headline h1 {
-                font-size: 29px;
-            }
-
-            .headline h2 {
-                font-size: 21px;
-            }
+        @media (max-width: 700px) {
 
             .content {
-                flex-direction: column;
 
-                gap: 25px;
+                flex-direction: column;
 
                 align-items: center;
             }
 
             .left {
-                width: 90%;
-                max-width: 365px;
+
+                width: min(90%, 450px);
             }
 
-            .image-placeholder {
+            .form-panel {
+
+                width: min(90%, 320px);
+
+                min-width: 0;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL SCREENS
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            .page {
+
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .headline h1 {
+
+                font-size: 23px;
+            }
+
+            .headline h2 {
+
+                font-size: 17px;
+            }
+
+            .form-panel {
+
                 width: 100%;
-            }
-
-            .signup {
-                width: 300px;
-            }
-
-            .footer {
-                margin-top: 35px;
-
-                padding: 15px;
-
-                flex-wrap: wrap;
             }
         }
 
@@ -464,12 +589,12 @@
     </div>
 
 
-    <!-- MAIN CONTENT -->
+    <!-- CONTENT -->
 
     <div class="content">
 
 
-        <!-- LEFT -->
+        <!-- IMAGE -->
 
         <div class="left">
 
@@ -484,140 +609,230 @@
         </div>
 
 
-        <!-- RIGHT -->
+        <!-- FORM PANEL -->
 
-        <div class="signup">
+        <div class="form-panel">
+
+
+            <!-- TABS -->
 
             <div class="tabs">
 
-                <span class="active">
+                <a
+                    href="#"
+                    id="signupTab"
+                    class="tab active">
                     Sign up
+                </a>
+
+                <span>
+                    |
                 </span>
 
                 <a
                     href="#"
-                    class="login-link">
-                    | Login
+                    id="loginTab"
+                    class="tab">
+                    Login
                 </a>
 
             </div>
 
 
-            <!-- BIRTHDAY -->
+            <!-- =========================
+                 SIGN UP FORM
+            ========================== -->
 
-            <div class="field">
+            <form
+                id="signupForm"
+                class="form active">
 
-                <label>
-                    Birthday
-                </label>
 
-                <div class="birthday">
+                <!-- BIRTHDAY -->
 
-                    <select>
-                        <option>Month</option>
-                    </select>
+                <div class="field">
 
-                    <select>
-                        <option>Day</option>
-                    </select>
+                    <label>
+                        Birthday
+                    </label>
 
-                    <select>
-                        <option>Year</option>
-                    </select>
+                    <div class="birthday">
+
+                        <select>
+                            <option>Month</option>
+                        </select>
+
+                        <select>
+                            <option>Day</option>
+                        </select>
+
+                        <select>
+                            <option>Year</option>
+                        </select>
+
+                    </div>
+
+                    <div class="help">
+                        Enter your birthday to have a personalized
+                        experience.
+                    </div>
 
                 </div>
 
-                <div class="help">
-                    Enter your birthday to have a personalized experience.
-                    It will not be given to any third party.
+
+                <!-- GENDER -->
+
+                <div class="gender">
+
+                    <div class="gender-title">
+                        Gender
+                    </div>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male">
+                        Male
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female">
+                        Female
+                    </label>
+
                 </div>
 
-            </div>
 
+                <!-- USERNAME -->
 
-            <!-- GENDER -->
+                <div class="field">
 
-            <div class="gender">
+                    <label>
+                        Username
+                    </label>
 
-                <div>
-                    Gender
-                </div>
-
-                <label>
                     <input
-                        type="radio"
-                        name="gender">
-                    Male
-                </label>
+                        type="text"
+                        name="username"
+                        autocomplete="username">
 
-                <label>
+                    <div class="help">
+                        3-20 alphanumeric characters, no spaces
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="field">
+
+                    <label>
+                        Password
+                    </label>
+
                     <input
-                        type="radio"
-                        name="gender">
-                    Female
-                </label>
+                        type="password"
+                        name="password"
+                        autocomplete="new-password">
 
-            </div>
+                    <div class="help">
+                        6-20 characters
+                    </div>
 
-
-            <!-- USERNAME -->
-
-            <div class="field">
-
-                <label>
-                    Username
-                </label>
-
-                <input
-                    type="text"
-                    autocomplete="username">
-
-                <div class="help">
-                    3-20 alphanumeric characters, no spaces
                 </div>
 
-            </div>
 
+                <!-- CONFIRM PASSWORD -->
 
-            <!-- PASSWORD -->
+                <div class="field">
 
-            <div class="field">
+                    <label>
+                        Confirm Password
+                    </label>
 
-                <label>
-                    Password
-                </label>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        autocomplete="new-password">
 
-                <input
-                    type="password"
-                    autocomplete="new-password">
-
-                <div class="help">
-                    6-20 characters, minimum of 4 letters & 2 numbers
                 </div>
 
-            </div>
+
+                <button
+                    type="submit"
+                    class="action-button">
+
+                    Sign Up
+
+                </button>
+
+            </form>
 
 
-            <!-- CONFIRM -->
+            <!-- =========================
+                 LOGIN FORM
+            ========================== -->
 
-            <div class="field">
-
-                <label>
-                    Confirm Password
-                </label>
-
-                <input
-                    type="password"
-                    autocomplete="new-password">
-
-            </div>
+            <form
+                id="loginForm"
+                class="form">
 
 
-            <!-- BUTTON -->
+                <!-- USERNAME -->
 
-            <button class="signup-button">
-                Sign Up
-            </button>
+                <div class="field">
+
+                    <label>
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        name="loginUsername"
+                        autocomplete="username">
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="field">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        name="loginPassword"
+                        autocomplete="current-password">
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="action-button">
+
+                    Login
+
+                </button>
+
+
+                <a
+                    href="#"
+                    class="forgot">
+
+                    Forgot your password?
+
+                </a>
+
+            </form>
 
         </div>
 
@@ -634,6 +849,10 @@
 
         <a href="#">
             Forums
+        </a>
+
+        <a href="#">
+            About
         </a>
 
         <a href="#">
@@ -654,8 +873,58 @@
 
     </div>
 
-
 </div>
+
+
+<!-- =========================================
+     LOGIN / SIGNUP SWITCHING
+========================================= -->
+
+<script>
+
+    const signupTab =
+        document.getElementById("signupTab");
+
+    const loginTab =
+        document.getElementById("loginTab");
+
+    const signupForm =
+        document.getElementById("signupForm");
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+
+    signupTab.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        signupTab.classList.add("active");
+
+        loginTab.classList.remove("active");
+
+        signupForm.classList.add("active");
+
+        loginForm.classList.remove("active");
+
+    });
+
+
+    loginTab.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        loginTab.classList.add("active");
+
+        signupTab.classList.remove("active");
+
+        loginForm.classList.add("active");
+
+        signupForm.classList.remove("active");
+
+    });
+
+</script>
 
 </body>
 </html>
