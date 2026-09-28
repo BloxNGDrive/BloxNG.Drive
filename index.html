@@ -22,90 +22,70 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #3c8dcc 0%,
-                    #55a5d9 50%,
-                    #78bde5 100%
-                );
+            background: linear-gradient(
+                to bottom,
+                #4b94cf 0%,
+                #5ba5d8 50%,
+                #78b9df 100%
+            );
 
             color: white;
         }
 
-        /* =========================================
+
+        /* =====================================
            PAGE
-        ========================================= */
+        ===================================== */
 
         .page {
-            min-height: 100vh;
-
             width: 100%;
+            min-height: 100vh;
 
             display: flex;
             flex-direction: column;
             align-items: center;
 
             padding:
-                clamp(25px, 5vw, 60px)
+                clamp(25px, 5vh, 60px)
                 20px
                 30px;
         }
 
 
-        /* =========================================
+        /* =====================================
            LOGO
-        ========================================= */
+        ===================================== */
 
         .logo {
-            display: block;
-
-            width:
-                clamp(
-                    180px,
-                    24vw,
-                    330px
-                );
+            width: clamp(180px, 25vw, 320px);
 
             height: auto;
 
+            display: block;
+
             margin-bottom:
-                clamp(
-                    20px,
-                    3vw,
-                    40px
-                );
+                clamp(20px, 4vh, 40px);
         }
 
 
-        /* =========================================
+        /* =====================================
            HEADLINE
-        ========================================= */
+        ===================================== */
 
         .headline {
-            width: 100%;
-
-            max-width: 1000px;
-
             text-align: center;
 
             font-size:
-                clamp(
-                    25px,
-                    3vw,
-                    42px
-                );
+                clamp(25px, 3vw, 42px);
 
             line-height: 1.15;
 
-            font-weight: bold;
+            font-weight: 700;
 
             margin-bottom:
-                clamp(
-                    25px,
-                    4vw,
-                    50px
-                );
+                clamp(25px, 5vh, 50px);
+
+            max-width: 1000px;
 
             text-shadow:
                 0 2px 3px rgba(0, 0, 0, 0.18);
@@ -116,33 +96,25 @@
         }
 
 
-        /* =========================================
+        /* =====================================
            MAIN CONTENT
-        ========================================= */
+        ===================================== */
 
         .content {
-            width: 100%;
-
-            max-width: 1200px;
+            width: min(1200px, 100%);
 
             display: flex;
 
             align-items: stretch;
 
-            justify-content: center;
-
             gap:
-                clamp(
-                    20px,
-                    4vw,
-                    55px
-                );
+                clamp(20px, 4vw, 55px);
         }
 
 
-        /* =========================================
-           LEFT IMAGE
-        ========================================= */
+        /* =====================================
+           LEFT SIDE
+        ===================================== */
 
         .left {
             flex: 1;
@@ -156,82 +128,47 @@
             justify-content: center;
         }
 
-        .main-image {
-            display: block;
 
+        /* =====================================
+           MAIN IMAGE
+        ===================================== */
+
+        .main-image {
             width: 100%;
 
             height: auto;
 
+            display: block;
+
             object-fit: contain;
-
-            border-radius: 3px;
-
-            box-shadow:
-                0 5px 18px rgba(0, 0, 0, 0.2);
         }
 
 
-        /* =========================================
-           IMAGE PLACEHOLDER
-        ========================================= */
-
-        .image-placeholder {
-            width: 100%;
-
-            min-height: 300px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background:
-                rgba(255, 255, 255, 0.15);
-
-            border:
-                2px dashed
-                rgba(255, 255, 255, 0.45);
-
-            color:
-                rgba(255, 255, 255, 0.8);
-
-            font-size: 18px;
-
-            border-radius: 3px;
-        }
-
-
-        /* =========================================
+        /* =====================================
            FORM PANEL
-        ========================================= */
+        ===================================== */
 
         .form-panel {
             width:
-                clamp(
-                    320px,
-                    36vw,
-                    430px
-                );
+                clamp(320px, 36vw, 430px);
 
             flex-shrink: 0;
 
             background:
-                rgba(15, 55, 95, 0.83);
+                rgba(15, 55, 95, 0.82);
 
             border-radius: 3px;
 
             box-shadow:
-                0 6px 22px rgba(0, 0, 0, 0.2);
+                0 5px 20px rgba(0, 0, 0, 0.20);
 
             overflow: hidden;
         }
 
 
-        /* =========================================
+        /* =====================================
            TABS
-        ========================================= */
+        ===================================== */
 
         .tabs {
             width: 100%;
@@ -276,35 +213,31 @@
             color: white;
 
             background:
-                rgba(255, 255, 255, 0.13);
+                rgba(255, 255, 255, 0.12);
         }
 
 
-        /* =========================================
-           FORM
-        ========================================= */
+        /* =====================================
+           FORMS
+        ===================================== */
 
         .form {
             padding:
-                clamp(
-                    25px,
-                    3vw,
-                    35px
-                );
+                clamp(25px, 3vw, 35px);
         }
 
         .form h2 {
             font-size: 26px;
 
-            font-weight: normal;
-
             margin-bottom: 25px;
+
+            font-weight: normal;
         }
 
 
-        /* =========================================
-           FORM FIELDS
-        ========================================= */
+        /* =====================================
+           FIELDS
+        ===================================== */
 
         .field {
             margin-bottom: 17px;
@@ -327,37 +260,36 @@
 
             height: 43px;
 
-            padding:
-                0 12px;
-
             border:
                 1px solid
                 rgba(0, 0, 0, 0.25);
 
             border-radius: 3px;
 
+            padding: 0 12px;
+
+            font-size: 15px;
+
             background: white;
 
             color: #333;
-
-            font-size: 15px;
 
             outline: none;
         }
 
         .field input:focus,
         .field select:focus {
-            border-color: #70b7e8;
+            border-color: #72b9ed;
 
             box-shadow:
                 0 0 0 2px
-                rgba(112, 183, 232, 0.25);
+                rgba(114, 185, 237, 0.25);
         }
 
 
-        /* =========================================
-           GREEN BUTTON
-        ========================================= */
+        /* =====================================
+           BUTTON
+        ===================================== */
 
         .submit-button {
             width: 100%;
@@ -370,7 +302,7 @@
 
             border-radius: 3px;
 
-            background: #3da34a;
+            background: #3ca34a;
 
             color: white;
 
@@ -391,7 +323,7 @@
         }
 
         .submit-button:hover {
-            background: #48b856;
+            background: #47b856;
         }
 
         .submit-button:active {
@@ -399,9 +331,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================
            FORGOT PASSWORD
-        ========================================= */
+        ===================================== */
 
         .forgot {
             display: block;
@@ -418,24 +350,24 @@
         }
 
         .forgot:hover {
-            color: white;
-
             text-decoration: underline;
+
+            color: white;
         }
 
 
-        /* =========================================
+        /* =====================================
            LOGIN FORM
-        ========================================= */
+        ===================================== */
 
         #loginForm {
             display: none;
         }
 
 
-        /* =========================================
+        /* =====================================
            FOOTER
-        ========================================= */
+        ===================================== */
 
         footer {
             width: 100%;
@@ -443,11 +375,7 @@
             text-align: center;
 
             margin-top:
-                clamp(
-                    35px,
-                    6vh,
-                    70px
-                );
+                clamp(35px, 6vh, 70px);
 
             padding-bottom: 10px;
 
@@ -455,8 +383,6 @@
 
             color:
                 rgba(255, 255, 255, 0.85);
-
-            line-height: 2;
         }
 
         footer a {
@@ -472,9 +398,9 @@
         }
 
 
-        /* =========================================
-           TABLET / SMALL SCREEN
-        ========================================= */
+        /* =====================================
+           TABLET
+        ===================================== */
 
         @media (max-width: 850px) {
 
@@ -496,9 +422,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================
            PHONE
-        ========================================= */
+        ===================================== */
 
         @media (max-width: 500px) {
 
@@ -521,8 +447,8 @@
                 font-size: 14px;
             }
 
-            .image-placeholder {
-                min-height: 200px;
+            footer {
+                line-height: 2;
             }
         }
     </style>
@@ -539,14 +465,14 @@
         ====================================== -->
 
         <img
-            src="images/logo.png"
+            src="logo.png"
             class="logo"
             alt="BloxNG.Drive"
         >
 
 
         <!-- =====================================
-             MAIN HEADING
+             HEADLINE
         ====================================== -->
 
         <h1 class="headline">
@@ -570,22 +496,13 @@
 
 
             <!-- =================================
-                 LEFT SIDE
+                 LEFT IMAGE
             ================================== -->
 
             <div class="left">
 
-                <!--
-                    When you upload your image,
-                    this will display it.
-
-                    File location:
-
-                    images/homepage.png
-                -->
-
                 <img
-                    src="images/homepage.png"
+                    src="homepage.png"
                     class="main-image"
                     alt="BloxNG.Drive"
                 >
@@ -594,7 +511,7 @@
 
 
             <!-- =================================
-                 RIGHT SIDE
+                 RIGHT FORM PANEL
             ================================== -->
 
             <div class="form-panel">
@@ -614,7 +531,6 @@
                         Sign Up
                     </button>
 
-
                     <button
                         class="tab"
                         id="loginTab"
@@ -627,7 +543,7 @@
 
 
                 <!-- =================================
-                     SIGN UP
+                     SIGN UP FORM
                 ================================== -->
 
                 <form
@@ -640,8 +556,6 @@
                         Create an account
                     </h2>
 
-
-                    <!-- Birthday -->
 
                     <div class="field">
 
@@ -657,8 +571,6 @@
 
                     </div>
 
-
-                    <!-- Gender -->
 
                     <div class="field">
 
@@ -696,8 +608,6 @@
                     </div>
 
 
-                    <!-- Username -->
-
                     <div class="field">
 
                         <label for="signupUsername">
@@ -714,8 +624,6 @@
 
                     </div>
 
-
-                    <!-- Password -->
 
                     <div class="field">
 
@@ -734,8 +642,6 @@
                     </div>
 
 
-                    <!-- Confirm Password -->
-
                     <div class="field">
 
                         <label for="confirmPassword">
@@ -753,8 +659,6 @@
                     </div>
 
 
-                    <!-- Sign Up Button -->
-
                     <button
                         type="submit"
                         class="submit-button"
@@ -766,7 +670,7 @@
 
 
                 <!-- =================================
-                     LOGIN
+                     LOGIN FORM
                 ================================== -->
 
                 <form
@@ -779,8 +683,6 @@
                         Log in
                     </h2>
 
-
-                    <!-- Username -->
 
                     <div class="field">
 
@@ -799,8 +701,6 @@
                     </div>
 
 
-                    <!-- Password -->
-
                     <div class="field">
 
                         <label for="loginPassword">
@@ -818,8 +718,6 @@
                     </div>
 
 
-                    <!-- Login Button -->
-
                     <button
                         type="submit"
                         class="submit-button"
@@ -827,8 +725,6 @@
                         Login
                     </button>
 
-
-                    <!-- Forgot Password -->
 
                     <a
                         href="#"
