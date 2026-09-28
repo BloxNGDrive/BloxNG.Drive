@@ -450,10 +450,6 @@
         }
 
 
-        /* =========================
-           DISABLED BUTTON
-        ========================= */
-
         .action-button:disabled {
 
             opacity: 0.6;
@@ -490,7 +486,7 @@
 
 
         /* =========================
-           STATUS MESSAGE
+           STATUS
         ========================= */
 
         .status {
@@ -682,7 +678,7 @@
 
 
         <!-- =========================
-             LEFT IMAGE
+             IMAGE
         ========================= -->
 
         <div class="left">
@@ -701,13 +697,15 @@
 
 
         <!-- =========================
-             FORM
+             FORM PANEL
         ========================= -->
 
         <div class="form-panel">
 
 
-            <!-- TABS -->
+            <!-- =========================
+                 TABS
+            ========================= -->
 
             <div class="tabs">
 
@@ -733,7 +731,7 @@
 
 
             <!-- =========================
-                 SIGN UP
+                 SIGN UP FORM
             ========================= -->
 
             <form
@@ -760,53 +758,18 @@
                                 Month
                             </option>
 
-                            <option value="01">
-                                January
-                            </option>
-
-                            <option value="02">
-                                February
-                            </option>
-
-                            <option value="03">
-                                March
-                            </option>
-
-                            <option value="04">
-                                April
-                            </option>
-
-                            <option value="05">
-                                May
-                            </option>
-
-                            <option value="06">
-                                June
-                            </option>
-
-                            <option value="07">
-                                July
-                            </option>
-
-                            <option value="08">
-                                August
-                            </option>
-
-                            <option value="09">
-                                September
-                            </option>
-
-                            <option value="10">
-                                October
-                            </option>
-
-                            <option value="11">
-                                November
-                            </option>
-
-                            <option value="12">
-                                December
-                            </option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
 
                         </select>
 
@@ -1049,7 +1012,7 @@
                 </div>
 
 
-                <!-- SIGN UP BUTTON -->
+                <!-- BUTTON -->
 
                 <button
                     type="submit"
@@ -1059,8 +1022,6 @@
                     Sign Up
                 </button>
 
-
-                <!-- SIGN UP STATUS -->
 
                 <div
                     id="signupStatus"
@@ -1072,7 +1033,7 @@
 
 
             <!-- =========================
-                 LOGIN
+                 LOGIN FORM
             ========================= -->
 
             <form
@@ -1141,8 +1102,6 @@
                 </a>
 
 
-                <!-- LOGIN STATUS -->
-
                 <div
                     id="loginStatus"
                     class="status"
@@ -1197,46 +1156,15 @@
 </div>
 
 
+
 <!-- =====================================================
-     SUPABASE
+     TAB SWITCHING
+     
+     THIS IS SEPARATE FROM SUPABASE.
+     Even if Supabase has an error, the tabs still work.
 ===================================================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
 <script>
-
-    /* =====================================================
-       SUPABASE SETTINGS
-    =====================================================
-
-       PUT YOUR SUPABASE INFORMATION HERE.
-
-       IMPORTANT:
-       Use the PUBLISHABLE key.
-
-       Do NOT put your service_role / secret key here.
-    ===================================================== */
-
-
-    const SUPABASE_URL =
-        "YOUR_SUPABASE_URL";
-
-
-    const SUPABASE_PUBLISHABLE_KEY =
-        "YOUR_SUPABASE_PUBLISHABLE_KEY";
-
-
-    const supabaseClient =
-        window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_PUBLISHABLE_KEY
-        );
-
-
-    /* =====================================================
-       TABS
-    ===================================================== */
 
     const signupTab =
         document.getElementById("signupTab");
@@ -1250,6 +1178,8 @@
     const loginForm =
         document.getElementById("loginForm");
 
+
+    /* SIGN UP */
 
     signupTab.addEventListener(
         "click",
@@ -1269,6 +1199,8 @@
     );
 
 
+    /* LOGIN */
+
     loginTab.addEventListener(
         "click",
         function(event) {
@@ -1286,6 +1218,52 @@
         }
     );
 
+</script>
+
+
+
+<!-- =====================================================
+     SUPABASE LIBRARY
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+<!-- =====================================================
+     SUPABASE ACCOUNT SYSTEM
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       YOUR SUPABASE INFORMATION
+       
+       REPLACE THESE TWO VALUES.
+       
+       Use your:
+       - Project URL
+       - Publishable key
+       
+       DO NOT use your service_role/secret key.
+    ===================================================== */
+
+
+    const SUPABASE_URL =
+        "YOUR_SUPABASE_URL";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
 
     /* =====================================================
        STATUS MESSAGE
@@ -1297,7 +1275,8 @@
         type
     ) {
 
-        element.textContent = message;
+        element.textContent =
+            message;
 
         element.className =
             "status show " + type;
@@ -1311,6 +1290,7 @@
         element.className =
             "status";
     }
+
 
 
     /* =====================================================
@@ -1340,7 +1320,7 @@
 
 
             /* -------------------------
-               GET VALUES
+               GET FORM VALUES
             ------------------------- */
 
             const username =
@@ -1414,15 +1394,20 @@
                     : "";
 
 
+
             /* -------------------------
-               VALIDATION
+               VALIDATE USERNAME
             ------------------------- */
 
             const usernamePattern =
                 /^[A-Za-z0-9]{3,20}$/;
 
 
-            if (!usernamePattern.test(username)) {
+            if (
+                !usernamePattern.test(
+                    username
+                )
+            ) {
 
                 showStatus(
                     status,
@@ -1434,7 +1419,14 @@
             }
 
 
-            if (password.length < 6) {
+
+            /* -------------------------
+               VALIDATE PASSWORD
+            ------------------------- */
+
+            if (
+                password.length < 6
+            ) {
 
                 showStatus(
                     status,
@@ -1446,7 +1438,9 @@
             }
 
 
-            if (password.length > 20) {
+            if (
+                password.length > 20
+            ) {
 
                 showStatus(
                     status,
@@ -1458,7 +1452,10 @@
             }
 
 
-            if (password !== confirmPassword) {
+            if (
+                password !==
+                confirmPassword
+            ) {
 
                 showStatus(
                     status,
@@ -1470,7 +1467,16 @@
             }
 
 
-            if (!month || !day || !year) {
+
+            /* -------------------------
+               VALIDATE BIRTHDAY
+            ------------------------- */
+
+            if (
+                !month ||
+                !day ||
+                !year
+            ) {
 
                 showStatus(
                     status,
@@ -1481,6 +1487,11 @@
                 return;
             }
 
+
+
+            /* -------------------------
+               VALIDATE GENDER
+            ------------------------- */
 
             if (!gender) {
 
@@ -1494,8 +1505,9 @@
             }
 
 
+
             /* -------------------------
-               DISABLE BUTTON
+               BUTTON
             ------------------------- */
 
             button.disabled = true;
@@ -1504,11 +1516,13 @@
                 "Creating...";
 
 
+
             try {
 
-                /* -------------------------
+
+                /* =================================================
                    CHECK USERNAME
-                ------------------------- */
+                ================================================= */
 
                 const {
                     data: existingProfile,
@@ -1517,7 +1531,10 @@
                     await supabaseClient
                         .from("profiles")
                         .select("id")
-                        .eq("username", username)
+                        .eq(
+                            "username",
+                            username
+                        )
                         .maybeSingle();
 
 
@@ -1539,9 +1556,10 @@
                 }
 
 
-                /* -------------------------
-                   CREATE AUTH ACCOUNT
-                ------------------------- */
+
+                /* =================================================
+                   CREATE SUPABASE AUTH ACCOUNT
+                ================================================= */
 
                 const {
                     data: authData,
@@ -1549,9 +1567,11 @@
                 } =
                     await supabaseClient.auth.signUp({
 
-                        email: email,
+                        email:
+                            email,
 
-                        password: password,
+                        password:
+                            password,
 
                         options: {
 
@@ -1581,9 +1601,10 @@
                 }
 
 
-                /* -------------------------
-                   SAVE PROFILE
-                ------------------------- */
+
+                /* =================================================
+                   CREATE PROFILE
+                ================================================= */
 
                 const birthday =
                     year +
@@ -1624,9 +1645,10 @@
                 }
 
 
-                /* -------------------------
+
+                /* =================================================
                    SUCCESS
-                ------------------------- */
+                ================================================= */
 
                 if (!authData.session) {
 
@@ -1640,7 +1662,7 @@
 
                     showStatus(
                         status,
-                        "Account created! You are now logged in.",
+                        "Account created! You are now logged in! :D",
                         "success"
                     );
 
@@ -1650,10 +1672,11 @@
                 signupForm.reset();
 
 
-            } catch (error) {
+            }
+            catch (error) {
 
                 console.error(
-                    "Sign up error:",
+                    "SIGN UP ERROR:",
                     error
                 );
 
@@ -1665,17 +1688,19 @@
                     "error"
                 );
 
-
-            } finally {
+            }
+            finally {
 
                 button.disabled = false;
 
                 button.textContent =
                     "Sign Up";
+
             }
 
         }
     );
+
 
 
     /* =====================================================
@@ -1721,7 +1746,10 @@
                     .value;
 
 
-            if (!username || !password) {
+            if (
+                !username ||
+                !password
+            ) {
 
                 showStatus(
                     status,
@@ -1741,9 +1769,10 @@
 
             try {
 
-                /* -------------------------
-                   FIND EMAIL BY USERNAME
-                ------------------------- */
+
+                /* =================================================
+                   FIND EMAIL USING USERNAME
+                ================================================= */
 
                 const {
                     data: profile,
@@ -1752,7 +1781,10 @@
                     await supabaseClient
                         .from("profiles")
                         .select("email")
-                        .eq("username", username)
+                        .eq(
+                            "username",
+                            username
+                        )
                         .maybeSingle();
 
 
@@ -1770,9 +1802,18 @@
                 }
 
 
-                /* -------------------------
-                   SUPABASE LOGIN
-                ------------------------- */
+                if (!profile.email) {
+
+                    throw new Error(
+                        "This account does not have an email address."
+                    );
+                }
+
+
+
+                /* =================================================
+                   SIGN INTO SUPABASE
+                ================================================= */
 
                 const {
                     error: loginError
@@ -1795,9 +1836,10 @@
                 }
 
 
-                /* -------------------------
+
+                /* =================================================
                    SUCCESS
-                ------------------------- */
+                ================================================= */
 
                 showStatus(
                     status,
@@ -1807,20 +1849,22 @@
 
 
                 /*
-                    Later we can replace this with:
+                    Later we can send the user
+                    to the actual BloxNG.Drive
+                    homepage here.
+
+                    Example:
 
                     window.location.href =
                         "home.html";
-
-                    once we make your
-                    logged-in homepage.
                 */
 
 
-            } catch (error) {
+            }
+            catch (error) {
 
                 console.error(
-                    "Login error:",
+                    "LOGIN ERROR:",
                     error
                 );
 
@@ -1832,17 +1876,19 @@
                     "error"
                 );
 
-
-            } finally {
+            }
+            finally {
 
                 button.disabled = false;
 
                 button.textContent =
                     "Login";
+
             }
 
         }
     );
+
 
 
     /* =====================================================
@@ -1850,7 +1896,9 @@
     ===================================================== */
 
     document
-        .getElementById("forgotPassword")
+        .getElementById(
+            "forgotPassword"
+        )
         .addEventListener(
             "click",
             async function(event) {
@@ -1888,6 +1936,7 @@
 
                 try {
 
+
                     const {
                         data: profile,
                         error: profileError
@@ -1923,9 +1972,11 @@
                             .resetPasswordForEmail(
                                 profile.email,
                                 {
+
                                     redirectTo:
                                         window.location.origin +
                                         window.location.pathname
+
                                 }
                             );
 
@@ -1943,10 +1994,11 @@
                     );
 
 
-                } catch (error) {
+                }
+                catch (error) {
 
                     console.error(
-                        "Password reset error:",
+                        "PASSWORD RESET ERROR:",
                         error
                     );
 
@@ -1962,7 +2014,6 @@
 
             }
         );
-
 
 </script>
 
