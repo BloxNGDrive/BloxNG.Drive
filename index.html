@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>BloxNG.Drive</title>
+
 
     <style>
 
         * {
             box-sizing: border-box;
         }
+
 
         html,
         body {
@@ -19,8 +27,13 @@
             min-height: 100%;
         }
 
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
             background:
                 linear-gradient(
@@ -31,6 +44,7 @@
                 );
 
             color: white;
+
             overflow-x: hidden;
         }
 
@@ -40,11 +54,15 @@
         ========================= */
 
         .page {
+
             width: 100%;
+
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
             padding:
@@ -59,7 +77,10 @@
         ========================= */
 
         .logo {
-            width: clamp(180px, 25vw, 320px);
+
+            width:
+                clamp(180px, 25vw, 320px);
+
             height: auto;
 
             display: block;
@@ -73,6 +94,7 @@
         ========================= */
 
         .headline {
+
             width: 100%;
 
             text-align: center;
@@ -81,7 +103,9 @@
                 clamp(15px, 2vw, 24px);
         }
 
+
         .headline h1 {
+
             margin: 0;
 
             font-size:
@@ -95,7 +119,9 @@
                 0 2px 2px rgba(0,0,0,.15);
         }
 
+
         .headline h2 {
+
             margin:
                 clamp(7px, 1vw, 12px)
                 0
@@ -112,16 +138,19 @@
 
 
         /* =========================
-           MAIN CONTENT
+           CONTENT
         ========================= */
 
         .content {
+
             width: 100%;
+
             max-width: 1050px;
 
             display: flex;
 
             justify-content: center;
+
             align-items: flex-start;
 
             gap:
@@ -133,11 +162,13 @@
 
 
         /* =========================
-           LEFT SIDE
+           LEFT
         ========================= */
 
         .left {
-            width: min(50%, 450px);
+
+            width:
+                min(50%, 450px);
 
             flex: 1;
 
@@ -145,9 +176,8 @@
         }
 
 
-        /* Main homepage image */
-
         .image-placeholder {
+
             width: 100%;
 
             aspect-ratio: 16 / 9;
@@ -162,6 +192,7 @@
 
 
         .build-text {
+
             margin-top:
                 clamp(10px, 1.5vw, 16px);
 
@@ -180,7 +211,9 @@
         ========================= */
 
         .form-panel {
-            width: min(35%, 300px);
+
+            width:
+                min(35%, 300px);
 
             min-width: 245px;
 
@@ -200,6 +233,7 @@
         ========================= */
 
         .tabs {
+
             font-size:
                 clamp(14px, 1.4vw, 16px);
 
@@ -208,7 +242,9 @@
             margin-bottom: 10px;
         }
 
+
         .tab {
+
             color: #8fc2ed;
 
             text-decoration: none;
@@ -216,7 +252,9 @@
             cursor: pointer;
         }
 
+
         .tab.active {
+
             color: white;
         }
 
@@ -226,10 +264,13 @@
         ========================= */
 
         .form {
+
             display: none;
         }
 
+
         .form.active {
+
             display: block;
         }
 
@@ -239,10 +280,13 @@
         ========================= */
 
         .field {
+
             margin-top: 9px;
         }
 
+
         .field label {
+
             display: block;
 
             font-size:
@@ -251,7 +295,9 @@
             margin-bottom: 4px;
         }
 
+
         .field input {
+
             width: 100%;
 
             height:
@@ -273,16 +319,19 @@
             outline: none;
         }
 
+
         .field input:focus {
+
             border-color: #6da9dc;
         }
 
 
         /* =========================
-           HELP TEXT
+           HELP
         ========================= */
 
         .help {
+
             font-size:
                 clamp(8px, .75vw, 10px);
 
@@ -299,12 +348,15 @@
         ========================= */
 
         .birthday {
+
             display: flex;
 
             gap: 4px;
         }
 
+
         .birthday select {
+
             height:
                 clamp(24px, 2vw, 28px);
 
@@ -327,17 +379,22 @@
         ========================= */
 
         .gender {
+
             font-size:
                 clamp(10px, .9vw, 12px);
 
             margin-top: 10px;
         }
 
+
         .gender-title {
+
             margin-bottom: 4px;
         }
 
+
         .gender label {
+
             display: inline-flex;
 
             align-items: center;
@@ -351,6 +408,7 @@
         ========================= */
 
         .action-button {
+
             width: 100%;
 
             height:
@@ -380,7 +438,9 @@
                 0 1px 1px rgba(0,0,0,.25);
         }
 
+
         .action-button:hover {
+
             background:
                 linear-gradient(
                     to bottom,
@@ -391,10 +451,23 @@
 
 
         /* =========================
+           DISABLED BUTTON
+        ========================= */
+
+        .action-button:disabled {
+
+            opacity: 0.6;
+
+            cursor: wait;
+        }
+
+
+        /* =========================
            FORGOT PASSWORD
         ========================= */
 
         .forgot {
+
             display: block;
 
             margin-top: 10px;
@@ -409,8 +482,50 @@
             text-decoration: none;
         }
 
+
         .forgot:hover {
+
             text-decoration: underline;
+        }
+
+
+        /* =========================
+           STATUS MESSAGE
+        ========================= */
+
+        .status {
+
+            display: none;
+
+            margin-top: 10px;
+
+            padding: 7px;
+
+            font-size:
+                clamp(9px, .9vw, 11px);
+
+            line-height: 1.3;
+
+            background:
+                rgba(0,0,0,.20);
+        }
+
+
+        .status.show {
+
+            display: block;
+        }
+
+
+        .status.success {
+
+            color: #d8ffd2;
+        }
+
+
+        .status.error {
+
+            color: #ffd1d1;
         }
 
 
@@ -419,6 +534,7 @@
         ========================= */
 
         .footer {
+
             width: 100%;
 
             margin-top: auto;
@@ -428,6 +544,7 @@
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             flex-wrap: wrap;
@@ -440,35 +557,46 @@
             color: #d6e6f7;
         }
 
+
         .footer a {
+
             color: #d6e6f7;
 
             text-decoration: none;
         }
 
+
         .footer a:hover {
+
             text-decoration: underline;
         }
 
 
         /* =========================
-           TABLET / MOBILE
+           MOBILE
         ========================= */
 
         @media (max-width: 700px) {
 
             .content {
+
                 flex-direction: column;
 
                 align-items: center;
             }
 
+
             .left {
-                width: min(90%, 450px);
+
+                width:
+                    min(90%, 450px);
             }
 
+
             .form-panel {
-                width: min(90%, 320px);
+
+                width:
+                    min(90%, 320px);
 
                 min-width: 0;
             }
@@ -482,28 +610,38 @@
         @media (max-width: 400px) {
 
             .page {
+
                 padding-left: 10px;
+
                 padding-right: 10px;
             }
 
+
             .headline h1 {
+
                 font-size: 23px;
             }
 
+
             .headline h2 {
+
                 font-size: 17px;
             }
 
+
             .form-panel {
+
                 width: 100%;
             }
         }
 
     </style>
+
 </head>
 
 
 <body>
+
 
 <div class="page">
 
@@ -537,14 +675,14 @@
 
 
     <!-- =========================
-         MAIN CONTENT
+         CONTENT
     ========================= -->
 
     <div class="content">
 
 
         <!-- =========================
-             LEFT SIDE
+             LEFT IMAGE
         ========================= -->
 
         <div class="left">
@@ -563,7 +701,7 @@
 
 
         <!-- =========================
-             FORM PANEL
+             FORM
         ========================= -->
 
         <div class="form-panel">
@@ -595,7 +733,7 @@
 
 
             <!-- =========================
-                 SIGN UP FORM
+                 SIGN UP
             ========================= -->
 
             <form
@@ -604,7 +742,7 @@
             >
 
 
-                <!-- Birthday -->
+                <!-- BIRTHDAY -->
 
                 <div class="field">
 
@@ -612,116 +750,174 @@
                         Birthday
                     </label>
 
+
                     <div class="birthday">
 
-                        <select>
-                            <option>Month</option>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+
+                        <select id="birthMonth">
+
+                            <option value="">
+                                Month
+                            </option>
+
+                            <option value="01">
+                                January
+                            </option>
+
+                            <option value="02">
+                                February
+                            </option>
+
+                            <option value="03">
+                                March
+                            </option>
+
+                            <option value="04">
+                                April
+                            </option>
+
+                            <option value="05">
+                                May
+                            </option>
+
+                            <option value="06">
+                                June
+                            </option>
+
+                            <option value="07">
+                                July
+                            </option>
+
+                            <option value="08">
+                                August
+                            </option>
+
+                            <option value="09">
+                                September
+                            </option>
+
+                            <option value="10">
+                                October
+                            </option>
+
+                            <option value="11">
+                                November
+                            </option>
+
+                            <option value="12">
+                                December
+                            </option>
+
                         </select>
 
-                        <select>
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
+
+                        <select id="birthDay">
+
+                            <option value="">
+                                Day
+                            </option>
+
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+
                         </select>
 
-                        <select>
-                            <option>Year</option>
-                            <option>2026</option>
-                            <option>2025</option>
-                            <option>2024</option>
-                            <option>2023</option>
-                            <option>2022</option>
-                            <option>2021</option>
-                            <option>2020</option>
-                            <option>2019</option>
-                            <option>2018</option>
-                            <option>2017</option>
-                            <option>2016</option>
-                            <option>2015</option>
-                            <option>2014</option>
-                            <option>2013</option>
-                            <option>2012</option>
-                            <option>2011</option>
-                            <option>2010</option>
-                            <option>2009</option>
-                            <option>2008</option>
-                            <option>2007</option>
-                            <option>2006</option>
-                            <option>2005</option>
-                            <option>2004</option>
-                            <option>2003</option>
-                            <option>2002</option>
-                            <option>2001</option>
-                            <option>2000</option>
-                            <option>1999</option>
-                            <option>1998</option>
-                            <option>1997</option>
-                            <option>1996</option>
-                            <option>1995</option>
-                            <option>1994</option>
-                            <option>1993</option>
-                            <option>1992</option>
-                            <option>1991</option>
-                            <option>1990</option>
+
+                        <select id="birthYear">
+
+                            <option value="">
+                                Year
+                            </option>
+
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+
                         </select>
 
                     </div>
 
+
                     <div class="help">
+
                         Enter your birthday to have a personalized experience.
+
                     </div>
 
                 </div>
 
 
-                <!-- Gender -->
+                <!-- GENDER -->
 
                 <div class="gender">
 
                     <div class="gender-title">
                         Gender
                     </div>
+
 
                     <label>
 
@@ -734,6 +930,7 @@
                         Male
 
                     </label>
+
 
                     <label>
 
@@ -750,7 +947,7 @@
                 </div>
 
 
-                <!-- Username -->
+                <!-- USERNAME -->
 
                 <div class="field">
 
@@ -758,20 +955,52 @@
                         Username
                     </label>
 
+
                     <input
                         type="text"
-                        name="username"
+                        id="signupUsername"
                         autocomplete="username"
+                        maxlength="20"
+                        required
                     >
 
+
                     <div class="help">
+
                         3-20 alphanumeric characters, no spaces
+
                     </div>
 
                 </div>
 
 
-                <!-- Password -->
+                <!-- EMAIL -->
+
+                <div class="field">
+
+                    <label>
+                        Email
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        autocomplete="email"
+                        required
+                    >
+
+
+                    <div class="help">
+
+                        Your email is used to sign into your account.
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
 
                 <div class="field">
 
@@ -779,20 +1008,27 @@
                         Password
                     </label>
 
+
                     <input
                         type="password"
-                        name="password"
+                        id="signupPassword"
                         autocomplete="new-password"
+                        minlength="6"
+                        maxlength="20"
+                        required
                     >
 
+
                     <div class="help">
+
                         6-20 characters
+
                     </div>
 
                 </div>
 
 
-                <!-- Confirm Password -->
+                <!-- CONFIRM PASSWORD -->
 
                 <div class="field">
 
@@ -800,30 +1036,43 @@
                         Confirm Password
                     </label>
 
+
                     <input
                         type="password"
-                        name="confirmPassword"
+                        id="signupConfirmPassword"
                         autocomplete="new-password"
+                        minlength="6"
+                        maxlength="20"
+                        required
                     >
 
                 </div>
 
 
-                <!-- Sign Up Button -->
+                <!-- SIGN UP BUTTON -->
 
                 <button
                     type="submit"
                     class="action-button"
+                    id="signupButton"
                 >
                     Sign Up
                 </button>
+
+
+                <!-- SIGN UP STATUS -->
+
+                <div
+                    id="signupStatus"
+                    class="status"
+                ></div>
 
 
             </form>
 
 
             <!-- =========================
-                 LOGIN FORM
+                 LOGIN
             ========================= -->
 
             <form
@@ -832,7 +1081,7 @@
             >
 
 
-                <!-- Username -->
+                <!-- USERNAME -->
 
                 <div class="field">
 
@@ -840,16 +1089,18 @@
                         Username
                     </label>
 
+
                     <input
                         type="text"
-                        name="loginUsername"
+                        id="loginUsername"
                         autocomplete="username"
+                        required
                     >
 
                 </div>
 
 
-                <!-- Password -->
+                <!-- PASSWORD -->
 
                 <div class="field">
 
@@ -857,33 +1108,45 @@
                         Password
                     </label>
 
+
                     <input
                         type="password"
-                        name="loginPassword"
+                        id="loginPassword"
                         autocomplete="current-password"
+                        required
                     >
 
                 </div>
 
 
-                <!-- Login Button -->
+                <!-- LOGIN BUTTON -->
 
                 <button
                     type="submit"
                     class="action-button"
+                    id="loginButton"
                 >
                     Login
                 </button>
 
 
-                <!-- Forgot Password -->
+                <!-- FORGOT PASSWORD -->
 
                 <a
                     href="#"
                     class="forgot"
+                    id="forgotPassword"
                 >
                     Forgot your password?
                 </a>
+
+
+                <!-- LOGIN STATUS -->
+
+                <div
+                    id="loginStatus"
+                    class="status"
+                ></div>
 
 
             </form>
@@ -934,11 +1197,46 @@
 </div>
 
 
-<!-- =========================
-     SIGN UP / LOGIN SCRIPT
-========================= -->
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
+
+    /* =====================================================
+       SUPABASE SETTINGS
+    =====================================================
+
+       PUT YOUR SUPABASE INFORMATION HERE.
+
+       IMPORTANT:
+       Use the PUBLISHABLE key.
+
+       Do NOT put your service_role / secret key here.
+    ===================================================== */
+
+
+    const SUPABASE_URL =
+        "YOUR_SUPABASE_URL";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
 
     const signupTab =
         document.getElementById("signupTab");
@@ -952,8 +1250,6 @@
     const loginForm =
         document.getElementById("loginForm");
 
-
-    /* SIGN UP TAB */
 
     signupTab.addEventListener(
         "click",
@@ -973,8 +1269,6 @@
     );
 
 
-    /* LOGIN TAB */
-
     loginTab.addEventListener(
         "click",
         function(event) {
@@ -992,8 +1286,687 @@
         }
     );
 
+
+    /* =====================================================
+       STATUS MESSAGE
+    ===================================================== */
+
+    function showStatus(
+        element,
+        message,
+        type
+    ) {
+
+        element.textContent = message;
+
+        element.className =
+            "status show " + type;
+    }
+
+
+    function clearStatus(element) {
+
+        element.textContent = "";
+
+        element.className =
+            "status";
+    }
+
+
+    /* =====================================================
+       SIGN UP
+    ===================================================== */
+
+    signupForm.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const button =
+                document.getElementById(
+                    "signupButton"
+                );
+
+
+            const status =
+                document.getElementById(
+                    "signupStatus"
+                );
+
+
+            clearStatus(status);
+
+
+            /* -------------------------
+               GET VALUES
+            ------------------------- */
+
+            const username =
+                document
+                    .getElementById(
+                        "signupUsername"
+                    )
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById(
+                        "signupEmail"
+                    )
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const password =
+                document
+                    .getElementById(
+                        "signupPassword"
+                    )
+                    .value;
+
+
+            const confirmPassword =
+                document
+                    .getElementById(
+                        "signupConfirmPassword"
+                    )
+                    .value;
+
+
+            const month =
+                document
+                    .getElementById(
+                        "birthMonth"
+                    )
+                    .value;
+
+
+            const day =
+                document
+                    .getElementById(
+                        "birthDay"
+                    )
+                    .value;
+
+
+            const year =
+                document
+                    .getElementById(
+                        "birthYear"
+                    )
+                    .value;
+
+
+            const genderElement =
+                document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+
+            const gender =
+                genderElement
+                    ? genderElement.value
+                    : "";
+
+
+            /* -------------------------
+               VALIDATION
+            ------------------------- */
+
+            const usernamePattern =
+                /^[A-Za-z0-9]{3,20}$/;
+
+
+            if (!usernamePattern.test(username)) {
+
+                showStatus(
+                    status,
+                    "Username must be 3-20 letters or numbers with no spaces.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (password.length < 6) {
+
+                showStatus(
+                    status,
+                    "Password must be at least 6 characters.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (password.length > 20) {
+
+                showStatus(
+                    status,
+                    "Password must be no more than 20 characters.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (password !== confirmPassword) {
+
+                showStatus(
+                    status,
+                    "The passwords do not match.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (!month || !day || !year) {
+
+                showStatus(
+                    status,
+                    "Please select your birthday.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (!gender) {
+
+                showStatus(
+                    status,
+                    "Please select a gender.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            /* -------------------------
+               DISABLE BUTTON
+            ------------------------- */
+
+            button.disabled = true;
+
+            button.textContent =
+                "Creating...";
+
+
+            try {
+
+                /* -------------------------
+                   CHECK USERNAME
+                ------------------------- */
+
+                const {
+                    data: existingProfile,
+                    error: usernameError
+                } =
+                    await supabaseClient
+                        .from("profiles")
+                        .select("id")
+                        .eq("username", username)
+                        .maybeSingle();
+
+
+                if (usernameError) {
+
+                    throw usernameError;
+                }
+
+
+                if (existingProfile) {
+
+                    showStatus(
+                        status,
+                        "That username is already taken.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /* -------------------------
+                   CREATE AUTH ACCOUNT
+                ------------------------- */
+
+                const {
+                    data: authData,
+                    error: authError
+                } =
+                    await supabaseClient.auth.signUp({
+
+                        email: email,
+
+                        password: password,
+
+                        options: {
+
+                            data: {
+
+                                username:
+                                    username
+
+                            }
+
+                        }
+
+                    });
+
+
+                if (authError) {
+
+                    throw authError;
+                }
+
+
+                if (!authData.user) {
+
+                    throw new Error(
+                        "The account could not be created."
+                    );
+                }
+
+
+                /* -------------------------
+                   SAVE PROFILE
+                ------------------------- */
+
+                const birthday =
+                    year +
+                    "-" +
+                    month +
+                    "-" +
+                    day;
+
+
+                const {
+                    error: profileError
+                } =
+                    await supabaseClient
+                        .from("profiles")
+                        .insert({
+
+                            id:
+                                authData.user.id,
+
+                            username:
+                                username,
+
+                            email:
+                                email,
+
+                            birthday:
+                                birthday,
+
+                            gender:
+                                gender
+
+                        });
+
+
+                if (profileError) {
+
+                    throw profileError;
+                }
+
+
+                /* -------------------------
+                   SUCCESS
+                ------------------------- */
+
+                if (!authData.session) {
+
+                    showStatus(
+                        status,
+                        "Account created! Check your email to confirm your account, then log in.",
+                        "success"
+                    );
+
+                } else {
+
+                    showStatus(
+                        status,
+                        "Account created! You are now logged in.",
+                        "success"
+                    );
+
+                }
+
+
+                signupForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Sign up error:",
+                    error
+                );
+
+
+                showStatus(
+                    status,
+                    error.message ||
+                    "Something went wrong while creating your account.",
+                    "error"
+                );
+
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Sign Up";
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const button =
+                document.getElementById(
+                    "loginButton"
+                );
+
+
+            const status =
+                document.getElementById(
+                    "loginStatus"
+                );
+
+
+            clearStatus(status);
+
+
+            const username =
+                document
+                    .getElementById(
+                        "loginUsername"
+                    )
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById(
+                        "loginPassword"
+                    )
+                    .value;
+
+
+            if (!username || !password) {
+
+                showStatus(
+                    status,
+                    "Please enter your username and password.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Logging in...";
+
+
+            try {
+
+                /* -------------------------
+                   FIND EMAIL BY USERNAME
+                ------------------------- */
+
+                const {
+                    data: profile,
+                    error: profileError
+                } =
+                    await supabaseClient
+                        .from("profiles")
+                        .select("email")
+                        .eq("username", username)
+                        .maybeSingle();
+
+
+                if (profileError) {
+
+                    throw profileError;
+                }
+
+
+                if (!profile) {
+
+                    throw new Error(
+                        "Username or password is incorrect."
+                    );
+                }
+
+
+                /* -------------------------
+                   SUPABASE LOGIN
+                ------------------------- */
+
+                const {
+                    error: loginError
+                } =
+                    await supabaseClient.auth
+                        .signInWithPassword({
+
+                            email:
+                                profile.email,
+
+                            password:
+                                password
+
+                        });
+
+
+                if (loginError) {
+
+                    throw loginError;
+                }
+
+
+                /* -------------------------
+                   SUCCESS
+                ------------------------- */
+
+                showStatus(
+                    status,
+                    "Login successful! :D",
+                    "success"
+                );
+
+
+                /*
+                    Later we can replace this with:
+
+                    window.location.href =
+                        "home.html";
+
+                    once we make your
+                    logged-in homepage.
+                */
+
+
+            } catch (error) {
+
+                console.error(
+                    "Login error:",
+                    error
+                );
+
+
+                showStatus(
+                    status,
+                    error.message ||
+                    "Username or password is incorrect.",
+                    "error"
+                );
+
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Login";
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       FORGOT PASSWORD
+    ===================================================== */
+
+    document
+        .getElementById("forgotPassword")
+        .addEventListener(
+            "click",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const username =
+                    document
+                        .getElementById(
+                            "loginUsername"
+                        )
+                        .value
+                        .trim();
+
+
+                const status =
+                    document
+                        .getElementById(
+                            "loginStatus"
+                        );
+
+
+                if (!username) {
+
+                    showStatus(
+                        status,
+                        "Enter your username first.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                try {
+
+                    const {
+                        data: profile,
+                        error: profileError
+                    } =
+                        await supabaseClient
+                            .from("profiles")
+                            .select("email")
+                            .eq(
+                                "username",
+                                username
+                            )
+                            .maybeSingle();
+
+
+                    if (profileError) {
+
+                        throw profileError;
+                    }
+
+
+                    if (!profile) {
+
+                        throw new Error(
+                            "We couldn't find that username."
+                        );
+                    }
+
+
+                    const {
+                        error
+                    } =
+                        await supabaseClient.auth
+                            .resetPasswordForEmail(
+                                profile.email,
+                                {
+                                    redirectTo:
+                                        window.location.origin +
+                                        window.location.pathname
+                                }
+                            );
+
+
+                    if (error) {
+
+                        throw error;
+                    }
+
+
+                    showStatus(
+                        status,
+                        "Password reset instructions were sent to your email.",
+                        "success"
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Password reset error:",
+                        error
+                    );
+
+
+                    showStatus(
+                        status,
+                        error.message ||
+                        "Unable to send password reset email.",
+                        "error"
+                    );
+
+                }
+
+            }
+        );
+
+
 </script>
 
 
 </body>
+
 </html>
