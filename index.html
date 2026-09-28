@@ -5,10 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>BloxNG.Drive</title>
 
@@ -22,18 +20,23 @@
 
         html,
         body {
+
             margin: 0;
+            padding: 0;
+
             width: 100%;
             min-height: 100%;
+
+            font-family: Arial, Helvetica, sans-serif;
+
         }
 
 
         body {
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+            min-height: 100vh;
+
+            color: white;
 
             background:
                 linear-gradient(
@@ -43,140 +46,118 @@
                     #3975c4 100%
                 );
 
-            color: white;
+            background-attachment: fixed;
 
-            overflow-x: hidden;
         }
 
 
-        /* =========================
-           PAGE
-        ========================= */
+        /* =================================================
+           MAIN PAGE
+        ================================================= */
 
         .page {
 
             width: 100%;
-
             min-height: 100vh;
 
             display: flex;
-
             flex-direction: column;
 
-            align-items: center;
-
-            padding:
-                clamp(15px, 3vw, 30px)
-                clamp(15px, 4vw, 50px)
-                0;
         }
 
-
-        /* =========================
-           LOGO
-        ========================= */
-
-        .logo {
-
-            width:
-                clamp(180px, 25vw, 320px);
-
-            height: auto;
-
-            display: block;
-
-            margin: 0 auto;
-        }
-
-
-        /* =========================
-           HEADLINE
-        ========================= */
-
-        .headline {
-
-            width: 100%;
-
-            text-align: center;
-
-            margin-top:
-                clamp(15px, 2vw, 24px);
-        }
-
-
-        .headline h1 {
-
-            margin: 0;
-
-            font-size:
-                clamp(25px, 3.2vw, 40px);
-
-            line-height: 1.15;
-
-            font-weight: 700;
-
-            text-shadow:
-                0 2px 2px rgba(0,0,0,.15);
-        }
-
-
-        .headline h2 {
-
-            margin:
-                clamp(7px, 1vw, 12px)
-                0
-                0;
-
-            font-size:
-                clamp(18px, 2.2vw, 28px);
-
-            font-weight: 700;
-
-            text-shadow:
-                0 2px 2px rgba(0,0,0,.15);
-        }
-
-
-        /* =========================
-           CONTENT
-        ========================= */
 
         .content {
 
-            width: 100%;
+            width: min(1050px, calc(100% - 40px));
 
-            max-width: 1050px;
+            margin: 0 auto;
 
-            display: flex;
-
-            justify-content: center;
-
-            align-items: flex-start;
-
-            gap:
-                clamp(25px, 6vw, 75px);
-
-            margin-top:
-                clamp(25px, 3vw, 35px);
-        }
-
-
-        /* =========================
-           LEFT
-        ========================= */
-
-        .left {
-
-            width:
-                min(50%, 450px);
+            padding-top: 55px;
+            padding-bottom: 35px;
 
             flex: 1;
 
-            text-align: center;
         }
 
 
-        .image-placeholder {
+        /* =================================================
+           LOGO / TITLE
+        ================================================= */
+
+        .logo {
+
+            display: block;
+
+            width: min(300px, 70%);
+
+            height: auto;
+
+            margin: 0 auto 20px auto;
+
+        }
+
+
+        h1 {
+
+            margin: 0;
+
+            text-align: center;
+
+            font-size: clamp(26px, 4vw, 40px);
+
+            font-weight: bold;
+
+        }
+
+
+        h2 {
+
+            margin: 8px 0 40px 0;
+
+            text-align: center;
+
+            font-size: clamp(16px, 2vw, 21px);
+
+            font-weight: normal;
+
+            color: white;
+
+        }
+
+
+        /* =================================================
+           MAIN AREA
+        ================================================= */
+
+        .main-area {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: center;
+
+            gap: clamp(25px, 6vw, 75px);
+
+        }
+
+
+        /* =================================================
+           LEFT SIDE
+        ================================================= */
+
+        .left-side {
+
+            flex: 1;
+
+            max-width: 650px;
+
+        }
+
+
+        .homepage-image {
+
+            display: block;
 
             width: 100%;
 
@@ -184,451 +165,494 @@
 
             object-fit: cover;
 
-            display: block;
-
             box-shadow:
-                0 1px 4px rgba(0,0,0,.35);
+                0 8px 20px rgba(0, 0, 0, 0.28);
+
         }
 
 
         .build-text {
 
-            margin-top:
-                clamp(10px, 1.5vw, 16px);
+            margin-top: 18px;
 
-            font-size:
-                clamp(18px, 2vw, 23px);
+            text-align: center;
+
+            font-size: 25px;
 
             font-weight: bold;
 
-            text-shadow:
-                0 2px 2px rgba(0,0,0,.15);
         }
 
 
-        /* =========================
-           FORM PANEL
-        ========================= */
+        /* =================================================
+           ACCOUNT PANEL
+        ================================================= */
 
-        .form-panel {
+        .account-panel {
 
-            width:
-                min(35%, 300px);
+            width: min(35%, 300px);
 
             min-width: 245px;
 
-            padding:
-                clamp(16px, 2vw, 23px);
-
             background:
-                rgba(18, 73, 137, .62);
+                rgba(25, 82, 155, 0.72);
+
+            padding: 18px;
 
             box-shadow:
-                inset 0 0 20px rgba(0,0,0,.08);
+                0 8px 20px rgba(0, 0, 0, 0.18);
+
         }
 
 
-        /* =========================
+        /* =================================================
            TABS
-        ========================= */
+        ================================================= */
 
         .tabs {
 
-            font-size:
-                clamp(14px, 1.4vw, 16px);
+            display: flex;
 
-            font-weight: bold;
+            width: 100%;
 
-            margin-bottom: 10px;
+            margin-bottom: 18px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.35);
+
         }
 
 
         .tab {
 
+            flex: 1;
+
+            padding: 8px 5px;
+
+            border: none;
+
+            background: transparent;
+
             color: #8fc2ed;
 
-            text-decoration: none;
+            font-size: 16px;
+
+            font-weight: bold;
 
             cursor: pointer;
+
         }
 
 
         .tab.active {
 
             color: white;
+
+            border-bottom:
+                2px solid white;
+
         }
 
 
-        /* =========================
-           FORMS
-        ========================= */
+        .tab:hover {
 
-        .form {
+            color: white;
+
+        }
+
+
+        /* =================================================
+           FORMS
+        ================================================= */
+
+        .account-form {
 
             display: none;
+
         }
 
 
-        .form.active {
-
-            display: block;
-        }
-
-
-        /* =========================
-           FIELDS
-        ========================= */
-
-        .field {
-
-            margin-top: 9px;
-        }
-
-
-        .field label {
+        .account-form.active {
 
             display: block;
 
-            font-size:
-                clamp(11px, 1vw, 13px);
+        }
+
+
+        .form-title {
+
+            margin: 0 0 14px 0;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 10px;
 
             margin-bottom: 4px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
         }
 
 
-        .field input {
+        input,
+        select {
 
             width: 100%;
 
-            height:
-                clamp(25px, 2.2vw, 30px);
+            height: 32px;
 
-            border:
-                1px solid #999;
+            padding: 5px 7px;
+
+            border: 1px solid #a9c6e6;
 
             border-radius: 0;
 
-            padding:
-                3px 6px;
-
-            font-size:
-                clamp(11px, 1vw, 13px);
-
             background: white;
 
+            color: #222;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 13px;
+
             outline: none;
+
         }
 
 
-        .field input:focus {
+        input:focus,
+        select:focus {
 
-            border-color: #6da9dc;
+            border-color: white;
+
         }
 
 
-        /* =========================
-           HELP
-        ========================= */
-
-        .help {
-
-            font-size:
-                clamp(8px, .75vw, 10px);
-
-            line-height: 1.2;
-
-            margin-top: 3px;
-
-            color: #e0ecf8;
-        }
-
-
-        /* =========================
+        /* =================================================
            BIRTHDAY
-        ========================= */
+        ================================================= */
 
-        .birthday {
+        .birthday-row {
 
             display: flex;
 
-            gap: 4px;
+            gap: 5px;
+
         }
 
 
-        .birthday select {
-
-            height:
-                clamp(24px, 2vw, 28px);
-
-            border:
-                1px solid #999;
-
-            font-size:
-                clamp(9px, .8vw, 11px);
-
-            background: white;
+        .birthday-row select {
 
             flex: 1;
 
             min-width: 0;
+
         }
 
 
-        /* =========================
+        .help-text {
+
+            margin-top: 4px;
+
+            color: #c8def5;
+
+            font-size: 11px;
+
+            line-height: 1.3;
+
+        }
+
+
+        /* =================================================
            GENDER
-        ========================= */
+        ================================================= */
 
-        .gender {
+        .gender-row {
 
-            font-size:
-                clamp(10px, .9vw, 12px);
+            display: flex;
 
-            margin-top: 10px;
+            gap: 15px;
+
+            margin-top: 5px;
+
         }
 
 
-        .gender-title {
+        .gender-option {
 
-            margin-bottom: 4px;
-        }
-
-
-        .gender label {
-
-            display: inline-flex;
+            display: flex;
 
             align-items: center;
 
-            margin-right: 10px;
+            gap: 5px;
+
+            margin: 0;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
         }
 
 
-        /* =========================
-           GREEN BUTTON
-        ========================= */
+        .gender-option input {
 
-        .action-button {
+            width: auto;
+
+            height: auto;
+
+        }
+
+
+        /* =================================================
+           BUTTONS
+        ================================================= */
+
+        .submit-button {
 
             width: 100%;
 
-            height:
-                clamp(38px, 3.5vw, 45px);
+            height: 38px;
 
-            margin-top: 12px;
+            margin-top: 18px;
 
-            border: none;
+            border: 1px solid #17882e;
+
+            border-radius: 2px;
 
             background:
                 linear-gradient(
-                    to bottom,
-                    #20c900,
-                    #00a800
+                    #55d66b,
+                    #28a943
                 );
 
             color: white;
 
-            font-size:
-                clamp(15px, 1.6vw, 19px);
+            font-size: 15px;
 
             font-weight: bold;
 
             cursor: pointer;
 
             text-shadow:
-                0 1px 1px rgba(0,0,0,.25);
+                0 1px 1px rgba(0,0,0,0.25);
+
         }
 
 
-        .action-button:hover {
+        .submit-button:hover {
 
             background:
                 linear-gradient(
-                    to bottom,
-                    #28dc00,
-                    #00b500
+                    #65df79,
+                    #32b64e
                 );
+
         }
 
 
-        .action-button:disabled {
+        .submit-button:active {
+
+            transform: translateY(1px);
+
+        }
+
+
+        .submit-button:disabled {
 
             opacity: 0.6;
 
             cursor: wait;
+
         }
 
 
-        /* =========================
-           FORGOT PASSWORD
-        ========================= */
+        /* =================================================
+           STATUS
+        ================================================= */
 
-        .forgot {
+        .status {
 
-            display: block;
+            min-height: 18px;
 
             margin-top: 10px;
 
             text-align: center;
 
-            color: #d7eafa;
+            font-size: 12px;
 
-            font-size:
-                clamp(9px, .9vw, 11px);
+            line-height: 1.35;
 
-            text-decoration: none;
         }
 
 
-        .forgot:hover {
+        /* =================================================
+           FORGOT PASSWORD
+        ================================================= */
 
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           STATUS
-        ========================= */
-
-        .status {
-
-            display: none;
-
-            margin-top: 10px;
-
-            padding: 7px;
-
-            font-size:
-                clamp(9px, .9vw, 11px);
-
-            line-height: 1.3;
-
-            background:
-                rgba(0,0,0,.20);
-        }
-
-
-        .status.show {
+        .forgot-password {
 
             display: block;
+
+            margin-top: 12px;
+
+            text-align: center;
+
+            color: #c6e2ff;
+
+            font-size: 12px;
+
+            text-decoration: underline;
+
+            cursor: pointer;
+
         }
 
 
-        .status.success {
+        .forgot-password:hover {
 
-            color: #d8ffd2;
+            color: white;
+
         }
 
 
-        .status.error {
-
-            color: #ffd1d1;
-        }
-
-
-        /* =========================
+        /* =================================================
            FOOTER
-        ========================= */
+        ================================================= */
 
-        .footer {
+        footer {
 
             width: 100%;
 
-            margin-top: auto;
+            padding: 18px 20px 25px 20px;
 
-            padding: 25px 10px;
+            text-align: center;
 
-            display: flex;
+            color: #c8def5;
 
-            justify-content: center;
+            font-size: 12px;
 
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-            font-size:
-                clamp(8px, .8vw, 10px);
-
-            color: #d6e6f7;
         }
 
 
-        .footer a {
+        footer a {
 
-            color: #d6e6f7;
+            color: white;
 
             text-decoration: none;
+
+            margin: 0 7px;
+
         }
 
 
-        .footer a:hover {
+        footer a:hover {
 
             text-decoration: underline;
+
         }
 
 
-        /* =========================
+        .copyright {
+
+            margin-top: 9px;
+
+        }
+
+
+        /* =================================================
            MOBILE
-        ========================= */
+        ================================================= */
 
         @media (max-width: 700px) {
 
             .content {
 
+                padding-top: 30px;
+
+            }
+
+
+            .main-area {
+
                 flex-direction: column;
 
                 align-items: center;
+
             }
 
 
-            .left {
+            .left-side {
 
-                width:
-                    min(90%, 450px);
+                width: 100%;
+
+                max-width: 650px;
+
             }
 
 
-            .form-panel {
+            .account-panel {
 
-                width:
-                    min(90%, 320px);
+                width: 100%;
+
+                max-width: 400px;
 
                 min-width: 0;
+
             }
+
+
+            h2 {
+
+                margin-bottom: 28px;
+
+            }
+
         }
 
 
-        /* =========================
-           SMALL PHONES
-        ========================= */
-
         @media (max-width: 400px) {
 
-            .page {
+            .content {
 
-                padding-left: 10px;
+                width: calc(100% - 24px);
 
-                padding-right: 10px;
             }
 
 
-            .headline h1 {
+            .birthday-row {
 
-                font-size: 23px;
+                gap: 3px;
+
             }
 
 
-            .headline h2 {
+            .birthday-row select {
 
-                font-size: 17px;
+                font-size: 12px;
+
             }
 
 
-            .form-panel {
+            footer a {
 
-                width: 100%;
+                display: inline-block;
+
+                margin: 3px 4px;
+
             }
+
         }
 
     </style>
@@ -642,114 +666,115 @@
 <div class="page">
 
 
-    <!-- =========================
-         LOGO
-    ========================= -->
-
-    <img
-        src="logo.png"
-        class="logo"
-        alt="BloxNG.Drive"
-    >
+    <main class="content">
 
 
-    <!-- =========================
-         HEADLINE
-    ========================= -->
+        <!-- =================================================
+             LOGO
+        ================================================= -->
 
-    <div class="headline">
+        <img
+            src="logo.png"
+            alt="BloxNG.Drive"
+            class="logo"
+        >
+
+
+        <!-- =================================================
+             TITLE
+        ================================================= -->
 
         <h1>
             Join the BloxNG.Drive community
         </h1>
 
+
         <h2>
             and explore what others have created
         </h2>
 
-    </div>
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================= -->
+
+        <div class="main-area">
 
 
-    <!-- =========================
-         CONTENT
-    ========================= -->
+            <!-- =============================================
+                 LEFT SIDE
+            ============================================== -->
 
-    <div class="content">
+            <div class="left-side">
 
-
-        <!-- =========================
-             IMAGE
-        ========================= -->
-
-        <div class="left">
-
-            <img
-                src="homepage.png"
-                class="image-placeholder"
-                alt="BloxNG.Drive"
-            >
-
-            <div class="build-text">
-                What will you build?
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             FORM PANEL
-        ========================= -->
-
-        <div class="form-panel">
-
-
-            <!-- =========================
-                 TABS
-            ========================= -->
-
-            <div class="tabs">
-
-                <a
-                    href="#"
-                    id="signupTab"
-                    class="tab active"
+                <img
+                    src="homepage.png"
+                    alt="BloxNG.Drive"
+                    class="homepage-image"
                 >
-                    Sign up
-                </a>
 
-                <span>|</span>
-
-                <a
-                    href="#"
-                    id="loginTab"
-                    class="tab"
-                >
-                    Login
-                </a>
+                <div class="build-text">
+                    What will you build?
+                </div>
 
             </div>
 
 
-            <!-- =========================
-                 SIGN UP FORM
-            ========================= -->
+            <!-- =============================================
+                 ACCOUNT PANEL
+            ============================================== -->
 
-            <form
-                id="signupForm"
-                class="form active"
-            >
+            <div class="account-panel">
 
 
-                <!-- BIRTHDAY -->
+                <!-- =========================================
+                     TABS
+                ========================================== -->
 
-                <div class="field">
+                <div class="tabs">
+
+                    <button
+                        type="button"
+                        id="signupTab"
+                        class="tab active"
+                    >
+                        Sign Up
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="loginTab"
+                        class="tab"
+                    >
+                        Login
+                    </button>
+
+                </div>
+
+
+                <!-- =========================================
+                     SIGN UP FORM
+                ========================================== -->
+
+                <form
+                    id="signupForm"
+                    class="account-form active"
+                >
+
+                    <div class="form-title">
+                        Create an account
+                    </div>
+
+
+                    <!-- Birthday -->
 
                     <label>
                         Birthday
                     </label>
 
 
-                    <div class="birthday">
+                    <div class="birthday-row">
 
 
                         <select id="birthMonth">
@@ -758,18 +783,53 @@
                                 Month
                             </option>
 
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                            <option value="01">
+                                January
+                            </option>
+
+                            <option value="02">
+                                February
+                            </option>
+
+                            <option value="03">
+                                March
+                            </option>
+
+                            <option value="04">
+                                April
+                            </option>
+
+                            <option value="05">
+                                May
+                            </option>
+
+                            <option value="06">
+                                June
+                            </option>
+
+                            <option value="07">
+                                July
+                            </option>
+
+                            <option value="08">
+                                August
+                            </option>
+
+                            <option value="09">
+                                September
+                            </option>
+
+                            <option value="10">
+                                October
+                            </option>
+
+                            <option value="11">
+                                November
+                            </option>
+
+                            <option value="12">
+                                December
+                            </option>
 
                         </select>
 
@@ -821,232 +881,174 @@
                                 Year
                             </option>
 
-                            <option value="2026">2026</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                            <option value="2013">2013</option>
-                            <option value="2012">2012</option>
-                            <option value="2011">2011</option>
-                            <option value="2010">2010</option>
-                            <option value="2009">2009</option>
-                            <option value="2008">2008</option>
-                            <option value="2007">2007</option>
-                            <option value="2006">2006</option>
-                            <option value="2005">2005</option>
-                            <option value="2004">2004</option>
-                            <option value="2003">2003</option>
-                            <option value="2002">2002</option>
-                            <option value="2001">2001</option>
-                            <option value="2000">2000</option>
-                            <option value="1999">1999</option>
-                            <option value="1998">1998</option>
-                            <option value="1997">1997</option>
-                            <option value="1996">1996</option>
-                            <option value="1995">1995</option>
-                            <option value="1994">1994</option>
-                            <option value="1993">1993</option>
-                            <option value="1992">1992</option>
-                            <option value="1991">1991</option>
-                            <option value="1990">1990</option>
+                            <script>
+
+                                const currentYear =
+                                    new Date().getFullYear();
+
+                                for (
+                                    let year = currentYear;
+                                    year >= 1900;
+                                    year--
+                                ) {
+
+                                    document.write(
+                                        `<option value="${year}">
+                                            ${year}
+                                        </option>`
+                                    );
+
+                                }
+
+                            </script>
 
                         </select>
 
                     </div>
 
 
-                    <div class="help">
-
-                        Enter your birthday to have a personalized experience.
-
+                    <div class="help-text">
+                        Your birthday helps us provide the right experience.
                     </div>
 
-                </div>
 
+                    <!-- Gender -->
 
-                <!-- GENDER -->
-
-                <div class="gender">
-
-                    <div class="gender-title">
+                    <label>
                         Gender
+                    </label>
+
+
+                    <div class="gender-row">
+
+
+                        <label class="gender-option">
+
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Male"
+                            >
+
+                            Male
+
+                        </label>
+
+
+                        <label class="gender-option">
+
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Female"
+                            >
+
+                            Female
+
+                        </label>
+
                     </div>
 
 
-                    <label>
+                    <!-- Username -->
 
-                        <input
-                            type="radio"
-                            name="gender"
-                            value="male"
-                        >
-
-                        Male
-
-                    </label>
-
-
-                    <label>
-
-                        <input
-                            type="radio"
-                            name="gender"
-                            value="female"
-                        >
-
-                        Female
-
-                    </label>
-
-                </div>
-
-
-                <!-- USERNAME -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="username">
                         Username
                     </label>
 
 
                     <input
                         type="text"
-                        id="signupUsername"
-                        autocomplete="username"
+                        id="username"
                         maxlength="20"
+                        autocomplete="username"
                         required
                     >
 
 
-                    <div class="help">
+                    <!-- Email -->
 
-                        3-20 alphanumeric characters, no spaces
-
-                    </div>
-
-                </div>
-
-
-                <!-- EMAIL -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="email">
                         Email
                     </label>
 
 
                     <input
                         type="email"
-                        id="signupEmail"
+                        id="email"
                         autocomplete="email"
                         required
                     >
 
 
-                    <div class="help">
+                    <!-- Password -->
 
-                        Your email is used to sign into your account.
-
-                    </div>
-
-                </div>
-
-
-                <!-- PASSWORD -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="password">
                         Password
                     </label>
 
 
                     <input
                         type="password"
-                        id="signupPassword"
-                        autocomplete="new-password"
-                        minlength="6"
+                        id="password"
                         maxlength="20"
+                        autocomplete="new-password"
                         required
                     >
 
 
-                    <div class="help">
+                    <!-- Confirm Password -->
 
-                        6-20 characters
-
-                    </div>
-
-                </div>
-
-
-                <!-- CONFIRM PASSWORD -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="confirmPassword">
                         Confirm Password
                     </label>
 
 
                     <input
                         type="password"
-                        id="signupConfirmPassword"
-                        autocomplete="new-password"
-                        minlength="6"
+                        id="confirmPassword"
                         maxlength="20"
+                        autocomplete="new-password"
                         required
                     >
 
-                </div>
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        id="signupButton"
+                        class="submit-button"
+                    >
+                        Sign Up
+                    </button>
 
 
-                <!-- BUTTON -->
+                    <div
+                        id="signupStatus"
+                        class="status"
+                    ></div>
 
-                <button
-                    type="submit"
-                    class="action-button"
-                    id="signupButton"
+                </form>
+
+
+                <!-- =========================================
+                     LOGIN FORM
+                ========================================== -->
+
+                <form
+                    id="loginForm"
+                    class="account-form"
                 >
-                    Sign Up
-                </button>
+
+                    <div class="form-title">
+                        Login
+                    </div>
 
 
-                <div
-                    id="signupStatus"
-                    class="status"
-                ></div>
+                    <!-- Username -->
 
-
-            </form>
-
-
-            <!-- =========================
-                 LOGIN FORM
-            ========================= -->
-
-            <form
-                id="loginForm"
-                class="form"
-            >
-
-
-                <!-- USERNAME -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="loginUsername">
                         Username
                     </label>
 
@@ -1058,14 +1060,10 @@
                         required
                     >
 
-                </div>
 
+                    <!-- Password -->
 
-                <!-- PASSWORD -->
-
-                <div class="field">
-
-                    <label>
+                    <label for="loginPassword">
                         Password
                     </label>
 
@@ -1077,513 +1075,599 @@
                         required
                     >
 
-                </div>
+
+                    <!-- Login -->
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="submit-button"
+                    >
+                        Login
+                    </button>
 
 
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="action-button"
-                    id="loginButton"
-                >
-                    Login
-                </button>
+                    <div
+                        id="loginStatus"
+                        class="status"
+                    ></div>
 
 
-                <!-- FORGOT PASSWORD -->
+                    <!-- Forgot password -->
 
-                <a
-                    href="#"
-                    class="forgot"
-                    id="forgotPassword"
-                >
-                    Forgot your password?
-                </a>
+                    <a
+                        href="#"
+                        id="forgotPassword"
+                        class="forgot-password"
+                    >
+                        Forgot password?
+                    </a>
 
+                </form>
 
-                <div
-                    id="loginStatus"
-                    class="status"
-                ></div>
-
-
-            </form>
-
+            </div>
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- =========================
+    <!-- =====================================================
          FOOTER
-    ========================= -->
+    ====================================================== -->
 
-    <div class="footer">
+    <footer>
 
-        <a href="#">
-            Home
-        </a>
+        <div>
 
-        <a href="#">
-            Forums
-        </a>
+            <a href="#">
+                Home
+            </a>
 
-        <a href="#">
-            About
-        </a>
+            <a href="#">
+                Forums
+            </a>
 
-        <a href="#">
-            Privacy
-        </a>
+            <a href="#">
+                About
+            </a>
 
-        <a href="#">
-            Terms
-        </a>
+            <a href="#">
+                Privacy
+            </a>
 
-        <a href="#">
-            Help
-        </a>
+            <a href="#">
+                Terms
+            </a>
 
-        <span>
+            <a href="#">
+                Help
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+
             © 2026 BloxNG.Drive
-        </span>
 
-    </div>
+        </div>
 
+    </footer>
 
 </div>
 
 
 
 <!-- =====================================================
-     TAB SWITCHING
-     
-     THIS IS SEPARATE FROM SUPABASE.
-     Even if Supabase has an error, the tabs still work.
+     SUPABASE LIBRARY
 ===================================================== -->
 
-   
-    <script>
-    
-        const signupTab =
-            document.getElementById("signupTab");
-    
-        const loginTab =
-            document.getElementById("loginTab");
-    
-        const signupForm =
-            document.getElementById("signupForm");
-    
-        const loginForm =
-            document.getElementById("loginForm");
-    
-    
-        signupTab.addEventListener("click", function(event) {
-    
-            event.preventDefault();
-    
-            signupTab.classList.add("active");
-            loginTab.classList.remove("active");
-    
-            signupForm.classList.add("active");
-            loginForm.classList.remove("active");
-    
-        });
-    
-    
-        loginTab.addEventListener("click", function(event) {
-    
-            event.preventDefault();
-    
-            loginTab.classList.add("active");
-            signupTab.classList.remove("active");
-    
-            loginForm.classList.add("active");
-            signupForm.classList.remove("active");
-    
-        });
-    
-    </script>
-    
-    
-    <!-- =====================================================
-         SUPABASE LIBRARY
-    ===================================================== -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    
-    <!-- =====================================================
-         SUPABASE ACCOUNT SYSTEM
-    ===================================================== -->
-    
-    <script>
-    
-        /* =====================================================
-           SUPABASE INFORMATION
-    
-           PUT YOUR OWN VALUES HERE.
-           
-           Project URL:
-           https://xxxxxxxxxxxxxxxx.supabase.co
-    
-           Publishable key:
-           sb_publishable_...
-    
-           DO NOT use the service_role / secret key.
-        ===================================================== */
-    
-        const SUPABASE_URL =
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+<!-- =====================================================
+     ACCOUNT SYSTEM
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       YOUR SUPABASE INFORMATION
+
+       KEEP YOUR ACTUAL VALUES HERE.
+    ===================================================== */
+
+    const SUPABASE_URL =
         "https://iihibiykvlnipncfbfbi.supabase.co";
 
 
-        const SUPABASE_PUBLISHABLE_KEY =
+    const SUPABASE_PUBLISHABLE_KEY =
         "sb_publishable_t3SpgXK9EwFtQ2Wo1FsgJA_gCrnw1bd";
-    
-    
-        const supabaseClient =
-            window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_PUBLISHABLE_KEY
-            );
-    
-    
-        /* =====================================================
-           SIGN UP
-        ===================================================== */
-    
-        signupForm.addEventListener("submit", async function(event) {
-    
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+
+    /* =====================================================
+       GET ELEMENTS
+    ===================================================== */
+
+    const signupTab =
+        document.getElementById("signupTab");
+
+
+    const loginTab =
+        document.getElementById("loginTab");
+
+
+    const signupForm =
+        document.getElementById("signupForm");
+
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+
+    const signupButton =
+        document.getElementById("signupButton");
+
+
+    const loginButton =
+        document.getElementById("loginButton");
+
+
+
+    /* =====================================================
+       TAB SWITCHING
+    ===================================================== */
+
+    signupTab.addEventListener(
+        "click",
+        function() {
+
+            signupTab.classList.add("active");
+
+            loginTab.classList.remove("active");
+
+
+            signupForm.classList.add("active");
+
+            loginForm.classList.remove("active");
+
+        }
+    );
+
+
+    loginTab.addEventListener(
+        "click",
+        function() {
+
+            loginTab.classList.add("active");
+
+            signupTab.classList.remove("active");
+
+
+            loginForm.classList.add("active");
+
+            signupForm.classList.remove("active");
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SIGN UP
+    ===================================================== */
+
+    signupForm.addEventListener(
+        "submit",
+        async function(event) {
+
             event.preventDefault();
-    
-    
+
+
             const status =
-                document.getElementById("signupStatus");
-    
-    
+                document.getElementById(
+                    "signupStatus"
+                );
+
+
             status.textContent =
                 "Creating account...";
-    
-    
-            /* -------------------------------------------------
-               GET FORM VALUES
-            ------------------------------------------------- */
-    
+
+
+            signupButton.disabled = true;
+
+
+
+            /* ---------------------------------------------
+               GET VALUES
+            --------------------------------------------- */
+
             const username =
-                document.getElementById("username").value.trim();
-    
-    
+                document.getElementById(
+                    "username"
+                ).value.trim();
+
+
             const email =
-                document.getElementById("email").value.trim();
-    
-    
+                document.getElementById(
+                    "email"
+                ).value.trim();
+
+
             const password =
-                document.getElementById("password").value;
-    
-    
+                document.getElementById(
+                    "password"
+                ).value;
+
+
             const confirmPassword =
-                document.getElementById("confirmPassword").value;
-    
-    
+                document.getElementById(
+                    "confirmPassword"
+                ).value;
+
+
             const month =
-                document.getElementById("birthMonth").value;
-    
-    
+                document.getElementById(
+                    "birthMonth"
+                ).value;
+
+
             const day =
-                document.getElementById("birthDay").value;
-    
-    
+                document.getElementById(
+                    "birthDay"
+                ).value;
+
+
             const year =
-                document.getElementById("birthYear").value;
-    
-    
+                document.getElementById(
+                    "birthYear"
+                ).value;
+
+
             const genderElement =
                 document.querySelector(
                     'input[name="gender"]:checked'
                 );
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                VALIDATE USERNAME
-            ------------------------------------------------- */
-    
-            if (!/^[A-Za-z0-9]{3,20}$/.test(username)) {
-    
+            --------------------------------------------- */
+
+            if (
+                !/^[A-Za-z0-9]{3,20}$/.test(
+                    username
+                )
+            ) {
+
                 status.textContent =
                     "Username must be 3–20 letters or numbers.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                VALIDATE EMAIL
-            ------------------------------------------------- */
-    
+            --------------------------------------------- */
+
             if (!email) {
-    
+
                 status.textContent =
                     "Please enter your email.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                VALIDATE PASSWORD
-            ------------------------------------------------- */
-    
-            if (password.length < 6 || password.length > 20) {
-    
+            --------------------------------------------- */
+
+            if (
+                password.length < 6 ||
+                password.length > 20
+            ) {
+
                 status.textContent =
                     "Password must be 6–20 characters.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
-            if (password !== confirmPassword) {
-    
+
+
+            if (
+                password !==
+                confirmPassword
+            ) {
+
                 status.textContent =
                     "Passwords do not match.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                VALIDATE BIRTHDAY
-            ------------------------------------------------- */
-    
-            if (!month || !day || !year) {
-    
+            --------------------------------------------- */
+
+            if (
+                !month ||
+                !day ||
+                !year
+            ) {
+
                 status.textContent =
                     "Please enter your birthday.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                VALIDATE GENDER
-            ------------------------------------------------- */
-    
+            --------------------------------------------- */
+
             if (!genderElement) {
-    
+
                 status.textContent =
                     "Please select your gender.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
             const gender =
                 genderElement.value;
-    
-    
-            /* -------------------------------------------------
-               CREATE BIRTHDAY STRING
-            ------------------------------------------------- */
-    
+
+
             const birthday =
                 `${year}-${month}-${day}`;
-    
-    
+
+
+
             /* =================================================
-               CHECK IF USERNAME IS ALREADY TAKEN
+               CHECK USERNAME
             ================================================= */
-    
+
             const {
                 data: existingProfile,
-                error: usernameCheckError
+                error: usernameError
             } =
                 await supabaseClient
                     .from("profiles")
                     .select("id, username")
                     .eq("username", username)
                     .maybeSingle();
-    
-    
-            if (usernameCheckError) {
-    
+
+
+            if (usernameError) {
+
                 console.error(
-                    "Username check error:",
-                    usernameCheckError
+                    usernameError
                 );
-    
+
                 status.textContent =
-                    usernameCheckError.message;
-    
+                    usernameError.message;
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
             if (existingProfile) {
-    
+
                 status.textContent =
                     "That username is already taken.";
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
+
             /* =================================================
-               CREATE AUTH ACCOUNT
+               CREATE SUPABASE AUTH ACCOUNT
             ================================================= */
-    
+
             const {
                 data: authData,
                 error: authError
             } =
                 await supabaseClient.auth.signUp({
-    
+
                     email: email,
-    
+
                     password: password,
-    
+
                     options: {
-    
+
                         data: {
-    
+
                             username: username
-    
+
                         }
-    
+
                     }
-    
+
                 });
-    
-    
+
+
             if (authError) {
-    
+
                 console.error(
-                    "Auth signup error:",
                     authError
                 );
-    
+
                 status.textContent =
                     authError.message;
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
             if (!authData.user) {
-    
+
                 status.textContent =
-                    "The account could not be created.";
-    
+                    "Account could not be created.";
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
             const userId =
                 authData.user.id;
-    
-    
+
+
+
             /* =================================================
                SAVE PROFILE
-    
-               UPSERT IS IMPORTANT.
-    
-               If Supabase already created a profile
-               such as Guest4650, this updates that row
-               instead of creating another row with the
-               same ID.
+
+               UPSERT prevents the duplicate primary-key
+               problem if another process already created
+               a profile for this user.
             ================================================= */
-    
+
             const {
                 error: profileError
             } =
                 await supabaseClient
                     .from("profiles")
                     .upsert(
-    
+
                         {
-    
+
                             id: userId,
-    
+
                             username: username,
-    
+
                             email: email,
-    
+
                             birthday: birthday,
-    
+
                             gender: gender
-    
+
                         },
-    
+
                         {
-    
+
                             onConflict: "id"
-    
+
                         }
-    
+
                     );
-    
-    
+
+
             if (profileError) {
-    
+
                 console.error(
-                    "Profile error:",
                     profileError
                 );
-    
+
                 status.textContent =
-                    "Account was created, but the profile could not be saved: "
+                    "Account created, but profile could not be saved: "
                     + profileError.message;
-    
+
+                signupButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
+
             /* =================================================
                SUCCESS
             ================================================= */
-    
+
             status.textContent =
                 "Account created successfully! :D";
-    
-    
+
+
             signupForm.reset();
-    
-        });
-    
-    
-        /* =====================================================
-           LOGIN
-        ===================================================== */
-    
-        loginForm.addEventListener("submit", async function(event) {
-    
+
+
+            signupButton.disabled = false;
+
+        }
+    );
+
+
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        async function(event) {
+
             event.preventDefault();
-    
-    
+
+
             const status =
-                document.getElementById("loginStatus");
-    
-    
+                document.getElementById(
+                    "loginStatus"
+                );
+
+
             const username =
-                document.getElementById("loginUsername")
-                    .value
-                    .trim();
-    
-    
+                document.getElementById(
+                    "loginUsername"
+                ).value.trim();
+
+
             const password =
-                document.getElementById("loginPassword")
-                    .value;
-    
-    
+                document.getElementById(
+                    "loginPassword"
+                ).value;
+
+
             status.textContent =
                 "Logging in...";
-    
-    
-            /* -------------------------------------------------
+
+
+            loginButton.disabled = true;
+
+
+
+            /* ---------------------------------------------
                FIND EMAIL FROM USERNAME
-            ------------------------------------------------- */
-    
+            --------------------------------------------- */
+
             const {
                 data: profile,
                 error: profileError
@@ -1593,185 +1677,197 @@
                     .select("email")
                     .eq("username", username)
                     .maybeSingle();
-    
-    
+
+
             if (profileError) {
-    
+
                 console.error(
-                    "Profile lookup error:",
                     profileError
                 );
-    
+
                 status.textContent =
                     profileError.message;
-    
+
+                loginButton.disabled = false;
+
                 return;
             }
-    
-    
+
+
             if (!profile) {
-    
+
                 status.textContent =
                     "Username or password is incorrect.";
-    
+
+                loginButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
-               SIGN IN THROUGH SUPABASE AUTH
-            ------------------------------------------------- */
-    
+
+
+
+            /* ---------------------------------------------
+               LOGIN THROUGH SUPABASE AUTH
+            --------------------------------------------- */
+
             const {
                 error: loginError
             } =
-                await supabaseClient.auth.signInWithPassword({
-    
-                    email: profile.email,
-    
-                    password: password
-    
-                });
-    
-    
+                await supabaseClient.auth
+                    .signInWithPassword({
+
+                        email: profile.email,
+
+                        password: password
+
+                    });
+
+
             if (loginError) {
-    
+
                 console.error(
-                    "Login error:",
                     loginError
                 );
-    
+
                 status.textContent =
                     "Username or password is incorrect.";
-    
+
+                loginButton.disabled = false;
+
                 return;
             }
-    
-    
-            /* -------------------------------------------------
+
+
+
+            /* ---------------------------------------------
                SUCCESS
-            ------------------------------------------------- */
-    
+            --------------------------------------------- */
+
             status.textContent =
                 "Logged in successfully! :D";
-    
-        });
-    
-    
-        /* =====================================================
-           FORGOT PASSWORD
-        ===================================================== */
-    
-        const forgotPassword =
-            document.getElementById("forgotPassword");
-    
-    
-        if (forgotPassword) {
-    
-            forgotPassword.addEventListener(
-                "click",
-                async function(event) {
-    
-                    event.preventDefault();
-    
-    
-                    const status =
-                        document.getElementById("loginStatus");
-    
-    
-                    const username =
-                        document.getElementById("loginUsername")
-                            .value
-                            .trim();
-    
-    
-                    if (!username) {
-    
-                        status.textContent =
-                            "Enter your username first.";
-    
-                        return;
-                    }
-    
-    
-                    status.textContent =
-                        "Finding account...";
-    
-    
-                    /* -----------------------------------------
-                       FIND USER EMAIL
-                    ----------------------------------------- */
-    
-                    const {
-                        data: profile,
-                        error: profileError
-                    } =
-                        await supabaseClient
-                            .from("profiles")
-                            .select("email")
-                            .eq("username", username)
-                            .maybeSingle();
-    
-    
-                    if (profileError) {
-    
-                        console.error(
-                            "Password reset lookup error:",
-                            profileError
-                        );
-    
-                        status.textContent =
-                            profileError.message;
-    
-                        return;
-                    }
-    
-    
-                    if (!profile) {
-    
-                        status.textContent =
-                            "Username not found.";
-    
-                        return;
-                    }
-    
-    
-                    /* -----------------------------------------
-                       SEND RESET EMAIL
-                    ----------------------------------------- */
-    
-                    const {
-                        error: resetError
-                    } =
-                        await supabaseClient.auth
-                            .resetPasswordForEmail(
-                                profile.email
-                            );
-    
-    
-                    if (resetError) {
-    
-                        console.error(
-                            "Password reset error:",
-                            resetError
-                        );
-    
-                        status.textContent =
-                            resetError.message;
-    
-                        return;
-                    }
-    
-    
-                    status.textContent =
-                        "Password reset email sent!";
-    
-                }
-            );
-    
+
+
+            loginButton.disabled = false;
+
         }
-    
-    </script>
+    );
+
+
+
+    /* =====================================================
+       FORGOT PASSWORD
+    ===================================================== */
+
+    const forgotPassword =
+        document.getElementById(
+            "forgotPassword"
+        );
+
+
+    forgotPassword.addEventListener(
+        "click",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const status =
+                document.getElementById(
+                    "loginStatus"
+                );
+
+
+            const username =
+                document.getElementById(
+                    "loginUsername"
+                ).value.trim();
+
+
+            if (!username) {
+
+                status.textContent =
+                    "Enter your username first.";
+
+                return;
+            }
+
+
+            status.textContent =
+                "Finding account...";
+
+
+
+            /* ---------------------------------------------
+               FIND EMAIL
+            --------------------------------------------- */
+
+            const {
+                data: profile,
+                error: profileError
+            } =
+                await supabaseClient
+                    .from("profiles")
+                    .select("email")
+                    .eq("username", username)
+                    .maybeSingle();
+
+
+            if (profileError) {
+
+                console.error(
+                    profileError
+                );
+
+                status.textContent =
+                    profileError.message;
+
+                return;
+            }
+
+
+            if (!profile) {
+
+                status.textContent =
+                    "Username not found.";
+
+                return;
+            }
+
+
+
+            /* ---------------------------------------------
+               SEND RESET EMAIL
+            --------------------------------------------- */
+
+            const {
+                error: resetError
+            } =
+                await supabaseClient.auth
+                    .resetPasswordForEmail(
+                        profile.email
+                    );
+
+
+            if (resetError) {
+
+                console.error(
+                    resetError
+                );
+
+                status.textContent =
+                    resetError.message;
+
+                return;
+            }
+
+
+            status.textContent =
+                "Password reset email sent!";
+
+        }
+    );
+
+</script>
 
 
 </body>
